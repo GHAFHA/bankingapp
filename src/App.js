@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import './App.css';
+// We use Route in order to define the different routes of our application
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//importing all the components need for the app
+import Account from './components/account';
+import Settings from './components/settings';
+import Transactions from './components/transactions';
 
 function App() {
 
-  //useState for set number
-  const [number, setNumber] = useState(0);
-
   return (
-    <div className='container'>
-    <div className="App">
-      <span> You clicked {number} times </span>
-      <button onClick={() => setNumber((prev) => prev + 1) }>
-        Increase
-      </button>
-      <button onClick={() => setNumber((prev) => prev - 1)}>Decrease</button>
-     
+    <BrowserRouter>
+    <div className='app'>
+      <Routes>
+        <Route path="/account" element={<Account />}>Account</Route>
+        <Route path="/settings" element={<Settings />}>Account</Route>
+        <Route path="/transactions" element={<Transactions />}>Account</Route>
+      </Routes>
     </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
