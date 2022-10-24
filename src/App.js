@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+// We use Route in order to define the different routes of our application
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//importing all the components need for the app
+import Account from './components/account';
+import Settings from './components/settings';
+import Transactions from './components/transactions';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div className='app'>
+      <Routes>
+        <Route path="/account" element={<Account />}>Account</Route>
+        <Route path="/settings" element={<Settings />}>Account</Route>
+        <Route path="/transactions" element={<Transactions />}>Account</Route>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
