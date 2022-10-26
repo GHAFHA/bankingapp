@@ -15,8 +15,8 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path="/account" element={<Account />}>Account</Route>
-        <Route path="/settings" element={<Settings />}>Account</Route>
-        <Route path="/transactions" element={<Transactions />}>Account</Route>
+        <Route path="/settings" element={<Settings />}>Settings</Route>
+        <Route path="/transactions" element={<Transactions />}>Tranactions</Route>
       </Routes>
     </div>
     </BrowserRouter>
