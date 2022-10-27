@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Account from './components/account';
 import Settings from './components/settings';
 import Transactions from './components/transactions';
+import Login from './components/login';
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path="/account" element={<Account />}>Account</Route>
-        <Route path="/settings" element={<Settings />}>Account</Route>
-        <Route path="/transactions" element={<Transactions />}>Account</Route>
+        <Route path="/settings" element={<Settings />}>Settings</Route>
+        <Route path="/transactions" element={<Transactions />}>Tranactions</Route>
+        <Route path="/login" element={<Login />}>Login</Route>
       </Routes>
     </div>
     </BrowserRouter>
