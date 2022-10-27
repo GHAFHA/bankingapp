@@ -17,6 +17,7 @@ function App() {
         <Route path="/account" element={<Account />}>Account</Route>
         <Route path="/settings" element={<Settings />}>Settings</Route>
         <Route path="/transactions" element={<Transactions />}>Tranactions</Route>
+        <Route path="/login" element={<Login />}>Login</Route>
       </Routes>
     </div>
     </BrowserRouter>
