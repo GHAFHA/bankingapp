@@ -4,9 +4,9 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //importing all the components need for the app
-import Account from './components/account';
-import Settings from './components/settings';
-import Transactions from './components/transactions';
+import Account from './components/accountpage';
+import Settings from './components/settingspage';
+import Transactions from './components/transactionspage';
 
 function App() {
 
