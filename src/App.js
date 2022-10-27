@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Account from './components/account';
 import Settings from './components/settings';
 import Transactions from './components/transactions';
+import Login from './components/login';
 
 function App() {
 
