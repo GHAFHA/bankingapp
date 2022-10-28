@@ -1,6 +1,6 @@
 import React from "react";
 
-const Transactions = () => {
+const Login = () => {
     return (
         <div>
             <h1>Welcome to the Transactions Page</h1>
@@ -8,4 +8,4 @@ const Transactions = () => {
     )
 }
 
-export default Transactions;
+export default Login;

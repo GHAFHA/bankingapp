@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //importing all the components need for the app
 import Account from './components/accountpage';
 import Settings from './components/settingspage';
-import Transactions from './components/transactionspage';
+import Transactions from './components/transactionslistpage';
+import Login from './components/loginpage';
 
 function App() {
 
@@ -14,9 +15,10 @@ function App() {
     <BrowserRouter>
     <div className='app'>
       <Routes>
-        <Route path="/account" element={<Account />}>Account</Route>
-        <Route path="/settings" element={<Settings />}>Account</Route>
-        <Route path="/transactions" element={<Transactions />}>Account</Route>
+        <Route path="/account" element={<Account />}></Route>
+        <Route path="/settings" element={<Settings />}></Route>
+        <Route path="/transactions" element={<Transactions />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
     </div>
     </BrowserRouter>
