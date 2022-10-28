@@ -1,11 +1,11 @@
 import React from "react";
 
-const Transactions = () => {
+const TransactionsListPage = () => {
     return (
         <div>
-            <h1>Welcome to the Settings Page</h1>
+            <h1>Welcome to the Transaction page</h1>
         </div>
     )
 }
 
-export default Transactions;
+export default TransactionsListPage;

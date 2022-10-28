@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //importing all the components need for the app
 import AccountPage from './components/accountpage';
 import SettingsPage from './components/settingspage';
-import TransactionsPage from './components/transactionslistpage';
+import TransactionsListPage from './components/transactionslistpage';
 import LoginPage from './components/loginpage';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/account" element={<AccountPage />}></Route>
         <Route path="/settings" element={<SettingsPage />}></Route>
-        <Route path="/transactions" element={<TransactionsPage />}></Route>
+        <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
     </div>
