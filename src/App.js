@@ -8,11 +8,13 @@ import AccountPage from './components/accountpage';
 import SettingsPage from './components/settingspage';
 import TransactionsListPage from './components/transactionslistpage';
 import LoginPage from './components/loginpage';
+import Navbar from './navbar/Navbar';
 
 function App() {
 
   return (
     <BrowserRouter>
+    <Navbar></Navbar>
     <div className='app'>
       <Routes>
         <Route path="/account" element={<AccountPage />}></Route>
