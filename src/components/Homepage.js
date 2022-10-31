@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./UI/Header";
+import Button from 'react-bootstrap/Button';
 
 const HomePage = () => {
     return(
@@ -8,6 +9,7 @@ const HomePage = () => {
                 title="CometWallet"
                 description="Banking made simple for students"
             />
+            <Button variant="warning">Warning</Button>
         </div>
     )
 }
