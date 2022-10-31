@@ -9,7 +9,7 @@ import * as IoIcons from "react-icons/io";
 export const SideNav =[
 {
     title: "Home",
-    path: "/",
+    path: "/home",
     icon: <AiIcons.AiFillHome></AiIcons.AiFillHome>,
     cName: "nav-text"
 },
