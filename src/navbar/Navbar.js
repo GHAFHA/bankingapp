@@ -5,11 +5,10 @@ const TopNav = () =>{
     return(
         <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/home">CometWallet</Navbar.Brand>
+        <Navbar.Brand href="/">CometWallet</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/account">Accounts</Nav.Link>
             <Nav.Link href="/transactions">Transactions</Nav.Link>
             <NavDropdown title="Settings" id="basic-nav-dropdown">
