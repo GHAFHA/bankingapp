@@ -15,8 +15,6 @@ const TopNav = () =>{
               <NavDropdown.Item href="#action/3.1">User Information</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Notification Settings</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Security Settings</NavDropdown.Item>
-              <NavDropdown.Item href="#/action/3.4">Deactivate account</NavDropdown.Item>
-              <NavDropdown.Item href="#/action/3.4">Useful links</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
