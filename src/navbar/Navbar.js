@@ -14,7 +14,7 @@ const TopNav = () =>{
             <NavDropdown title="Settings" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">User Information</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Notification Settings</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Security Settings</NavDropdown.Item>
+              <NavDropdown.Item href="/securitysettings">Security Settings</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
