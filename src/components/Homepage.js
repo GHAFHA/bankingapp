@@ -11,9 +11,11 @@ const HomePage = () => {
         <div className="container-text-center">
             <Row>
             <Col>
+            <div className="header-container ">
             <Header
                 title="CometWallet"
                 description="Banking made simple for students"
+                longdescription="The goal for CometWallet is to making banking easier for students"
             />
             </Col>
             </Row>
