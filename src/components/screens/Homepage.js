@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
     return(
-        <div classname ="main">
+        <div className ="main">
             <Container>
                 <Row>
-                    <div className="intro-text">
-                        <div>
+                    <div className="content-container">
+                        <div className="text-container">
                             <h1 className="title">CometWallet</h1>
                             <p className="subtitle">Helping Students manage their finances</p>
                         </div>
@@ -21,7 +21,7 @@ const HomePage = () => {
                                 <Button size="lg" className="landingbutton">Login</Button>
                             </Link>
                             <Link to ="./registration">
-                                <Button classname="landingbutton" variant="outline-primary" size='lg'>Register</Button>
+                                <Button className="landingbutton" variant="outline-primary" size='lg'>Register</Button>
                             </Link>
                         </div>
                     </div>
