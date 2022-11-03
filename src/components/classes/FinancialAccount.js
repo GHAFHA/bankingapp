@@ -1,3 +1,7 @@
+/*
+    This file created by Vaughan McInerney (vmm190002)
+*/
+
 class FinancialAccount {
     constructor(displayName) {
         this.accountId = Math.floor(Math.random() * 9000000) + 1000000;
