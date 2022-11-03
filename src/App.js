@@ -1,3 +1,5 @@
+/*This file and project (files, organization of folders, github) was set-up by Noel Johnson nxj190008 */
+
 import React, {useState} from 'react';
 import './App.css';
 // We use Route in order to define the different routes of our application
