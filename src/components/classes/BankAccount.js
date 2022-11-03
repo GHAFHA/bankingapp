@@ -1,3 +1,7 @@
+/*
+    This file created by Vaughan McInerney (vmm190002)
+*/
+
 import FinancialAccount from "./FinancialAccount";
 
 class BankAccount extends FinancialAccount {
