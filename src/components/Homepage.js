@@ -15,6 +15,7 @@ const HomePage = () => {
                 title="CometWallet"
                 description="Banking made simple for students"
             />
+            <Button variant="primary" size="lg">Login</Button>
             </Col>
             </Row>
         </div>
