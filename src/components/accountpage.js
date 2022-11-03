@@ -7,38 +7,6 @@ import React, { useState } from "react";
 import { Accordion, Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import Header from "./UI/Header";
 
-class FinancialAccount {
-    constructor(displayName) {
-        this.accountId = Math.floor(Math.random() * 9000000) + 1000000;
-        this.isValid = true;
-        this.displayName = displayName;
-    }
-
-    validate() {
-        return this.isValid;
-    }
-
-}
-
-class BankAccount extends FinancialAccount {
-    constructor(displayName, accountNumber, routingNumber) {
-        super(displayName);
-        this.accountNumber = accountNumber;
-        this.routingNumber = routingNumber;
-    }
-
-    getMaskedAccountNumber() {
-        let output = "";
-        let routingNumberString = "" + this.routingNumber
-        for(let i = 0; i < routingNumberString.length - 4; i++) {
-            output += "*";
-        }
-        output += routingNumberString.substring(routingNumberString.length - 4);
-        return output;
-    }
-}
-
-
 
 const AccountPage = () => {
 
