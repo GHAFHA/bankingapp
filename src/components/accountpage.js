@@ -7,12 +7,17 @@ import React, { useState } from "react";
 import { Accordion, Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import Header from "./UI/Header";
 
+import BankAccount from "./classes/BankAccount";
+import CreditCardAccount from "./classes/CreditCardAccount";
+
 
 const AccountPage = () => {
 
     const [bankAccountList, setBankAccountList] = useState([]);
+    const [creditCardAccountList, setCreditCardAccountList] = useState([]);
 
     const [addBankAccountFormData, setAddBankAccountFormData] = useState({})
+    const [addCreditCardAccountFormData, setAddCreditCardAccountFormData] = useState({})
 
     const [showAddBankAccountModal, setShowAddBankAccountModal] = useState(false);
     const [showAddCreditCardAccountModal, setShowAddCreditCardAccountModal] = useState(false);
@@ -39,14 +44,15 @@ const AccountPage = () => {
 
     const handleCreditCardAccountModalShow = () => {
         setShowAddCreditCardAccountModal(true);
+        setAddCreditCardAccountFormData({});
     }
 
     const handleCreditCardAccountModalClose = () => {
         setShowAddCreditCardAccountModal(false);
+        setAddCreditCardAccountFormData({});
     }
 
     const addBankAccount = () => {
-        console.log("addBankAccount has been called with event");
         let newAccountData = {...addBankAccountFormData};
         handleBankAccountModalClose();
         setBankAccountList([...bankAccountList, 
@@ -54,7 +60,32 @@ const AccountPage = () => {
         ]);
     }
 
-    const bankAccordion = []
+    const addCreditCardAccount = () => {
+        let newAccountData = {...addCreditCardAccountFormData};
+        handleCreditCardAccountModalClose();
+        setCreditCardAccountList([...creditCardAccountList, 
+            new CreditCardAccount(newAccountData.accountName, newAccountData.cardNumber, newAccountData.cvv, newAccountData.expirationDate)
+        ]);
+    }
+
+    const handleCreditCardAccountInputChangeCardNumber = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cardNumber: e.target.value});
+    }
+    const handleCreditCardAccountInputChangeExpirationDate = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, expirationDate: e.target.value});
+    }
+    const handleCreditCardAccountInputChangeCvvCode = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cvv: e.target.value});
+    }
+    const handleCreditCardAccountInputChangeAccountName = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, accountName: e.target.value});
+    }
+
+    
+
+    const bankAccordion = [];
+    const creditCardAccordion = [];
+
     for(let b of bankAccountList) {
         bankAccordion.push(
             <Accordion.Item eventKey={b.accountId}>
@@ -68,6 +99,32 @@ const AccountPage = () => {
                         <Row>
                             <Col>Account Number:</Col>
                             <Col>{b.getMaskedAccountNumber()}</Col>
+                        </Row>
+                        <Row>&nbsp;</Row>
+                        <Row>
+                            <Col>
+                                <Button variant="danger">Delete</Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Accordion.Body>
+            </Accordion.Item>
+        )
+    }
+
+    for(let c of creditCardAccountList) {
+        creditCardAccordion.push(
+            <Accordion.Item eventKey={c.accountId}>
+                <Accordion.Header>{c.displayName}</Accordion.Header>
+                <Accordion.Body>
+                    <Container>
+                        <Row>
+                            <Col>Card Number:</Col>
+                            <Col>{c.getMaskedCreditCardNumber()}</Col>
+                        </Row>
+                        <Row>
+                            <Col>Expiration Date:</Col>
+                            <Col>{c.expirationDate}</Col>
                         </Row>
                         <Row>&nbsp;</Row>
                         <Row>
@@ -112,9 +169,7 @@ const AccountPage = () => {
                         <Accordion.Item eventKey="1">
                             <Accordion.Header>Credit Card Accounts</Accordion.Header>
                             <Accordion.Body>
-                                <Accordion>
-                                    
-                                </Accordion>
+                                <Accordion>{creditCardAccordion}</Accordion>
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>
@@ -173,6 +228,64 @@ const AccountPage = () => {
                 </Button>
                 <Button variant="primary" type="submit" onClick={addBankAccount}>
                     Add Bank Account
+                </Button>
+            </Modal.Footer>
+        </Modal>
+        <Modal show={showAddCreditCardAccountModal} onHide={handleCreditCardAccountModalClose} backdrop="static">
+            <Modal.Header>
+                <Modal.Title>Add Credit Card Account</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form>
+                    <Form.Group controlId="addCreditCardAccount.accountName" 
+                        onChange={handleCreditCardAccountInputChangeAccountName}
+                        value={addCreditCardAccountFormData.accountName}
+                    >
+                        <Form.Label>Account Name</Form.Label>
+                        <Form.Control
+                            type="string"
+                            autoFocus
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="addCreditCardAccount.cardNumber" 
+                        onChange={handleCreditCardAccountInputChangeCardNumber}
+                        value={addCreditCardAccountFormData.cardNumber}
+                    >
+                        <Form.Label>Card Number</Form.Label>
+                        <Form.Control 
+                            type="integer"
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="addCreditCardAccount.cvv" 
+                        onChange={handleCreditCardAccountInputChangeCvvCode}
+                        value={addCreditCardAccountFormData.cvv}
+                    >
+                        <Form.Label>CVV Code</Form.Label>
+                        <Form.Control 
+                            type="password"
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="addCreditCardAccount.expirationDate" 
+                        onChange={handleCreditCardAccountInputChangeExpirationDate}
+                        value={addCreditCardAccountFormData.expirationDate}
+                    >
+                        <Form.Label>Expiration Date</Form.Label>
+                        <Form.Control 
+                            type="string"
+                            required
+                        />
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleCreditCardAccountModalClose}>
+                    Cancel
+                </Button>
+                <Button variant="primary" type="submit" onClick={addCreditCardAccount}>
+                    Add Credit Card Account
                 </Button>
             </Modal.Footer>
         </Modal>
