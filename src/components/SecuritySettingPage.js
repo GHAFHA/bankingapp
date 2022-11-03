@@ -12,6 +12,7 @@ const SecuritySetting = () => {
         <div>
 
             <h1>Security Settings</h1>
+            <h2 ><font size = "4">This system is using Single sign-on(SSO)</font></h2>
             
             
 
