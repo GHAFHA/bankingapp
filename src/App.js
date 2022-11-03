@@ -4,11 +4,12 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //importing all the pages need for the app
-import AccountPage from './components/accountpage';
-import SettingsPage from './components/settingspage';
-import TransactionsListPage from './components/transactionslistpage';
-import LoginPage from './components/loginpage';
-import HomePage from './components/Homepage';
+import AccountPage from './components/screens/accountpage';
+import SettingsPage from './components/screens/settingspage';
+import TransactionsListPage from './components/screens/transactionslistpage';
+import LoginPage from './components/screens/loginpage';
+import HomePage from './components/screens/Homepage';
+import registration from './components/screens/registration';
 
 //importing the components needed for the app
 import Navbar from './navbar/Navbar';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/settings" element={<SettingsPage />}></Route>
         <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/registration" element={<registration />}></Route>
       </Routes>
     </div>
     </BrowserRouter>
