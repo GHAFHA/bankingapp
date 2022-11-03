@@ -73,6 +73,49 @@ const SecuritySetting = () => {
         </tr>
       </tbody>
 
+
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    </Table>
+    <Table striped bordered hover size="sm">
+      <tbody>  
+        <tr>
+          <td colSpan={2}>Login Notification</td>
+          <td colSpan={2}><ToggleButtonGroup type="radio" name="notif" defaultValue={4}>
+        <ToggleButton id="tbg-radio-7" value={7}>
+          Active
+        </ToggleButton>
+        <ToggleButton id="tbg-radio-8" value={8}>
+          Deactive
+        </ToggleButton>
+      </ToggleButtonGroup></td>
+        </tr>
+        <tr>
+          <td colSpan={2}>Email</td>
+          <td colSpan={2}><ToggleButtonGroup type="radio" name="no" defaultValue={5}>
+        <ToggleButton id="tbg-radio-9" value={9}>
+          Active
+        </ToggleButton>
+        <ToggleButton id="tbg-radio-10" value={10}>
+          Deactive
+        </ToggleButton>
+      </ToggleButtonGroup></td>
+        </tr>
+        <tr>
+          <td colSpan={2}>SMS</td>
+          <td colSpan={2}><ToggleButtonGroup type="radio" name="sms" defaultValue={6}>
+        <ToggleButton id="tbg-radio-11" value={11}>
+          Active
+        </ToggleButton>
+        <ToggleButton id="tbg-radio-12" value={12}>
+          Deactive
+        </ToggleButton>
+      </ToggleButtonGroup></td>
+        </tr>
+      </tbody>
+
     </Table>
     
    
