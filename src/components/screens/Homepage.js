@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
     return(
         <div className ="main">
-            <Container>
+            <Container className="container-class">
                 <Row className="Row-Container">
                     <Col className="Col-Container">
                     <div className="content-container">
@@ -20,10 +20,13 @@ const HomePage = () => {
                         </div>
                         <div className="buttonContainer">
                             <Link to ="./login">
-                                <Button className="landingbutton">Login</Button>
+                                <Button className="loginbutton" variant="dark">Login</Button>
                             </Link>
                             <Link to ="./registration">
-                                <Button className="landingbutton">Register</Button>
+                                <Button 
+                                variant="outline-dark"
+                                size="lg"
+                                className="registerbutton">Register</Button>
                             </Link>
                         </div>
                     </div>

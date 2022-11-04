@@ -1,16 +1,14 @@
 /*This file and project was set-up by Noel Johnson nxj190008 */
 .title{
-  font-size: 75px;
-  display: flex;
-  background-color: rgb(18, 71,52);
+  font-size: 95px;
+  background-color: rgb(232, 117,0);
   color: white;
 }
 
 .subtitle{
   font-size: 20px;
-  padding: 10px;
-  display: flex;
-  background-color: rgb(18, 71,52);
+  padding-top: 10px;
+  background-color: rgb(232, 117,0);
   color: white;
 
 }
@@ -18,9 +16,8 @@
 .content-container{
   width: 700px;
   height: 450px;
-  text-align: center;
   z-index: 2;
-  background-color: rgb(18, 71,52);
+  background-color: rgb(232, 117,0);
   border-radius: 10px;
   display: flex;
 
@@ -28,10 +25,16 @@
 
 .text-container{
   background-color: black;
-  background-color: rgb(18, 71,52);
+  background-color: rgb(232, 117,0);
   height: 100px;
   width: auto;
   padding: 10px;
+}
+
+.outer-box{
+  width: 720px;
+  height: 475px;
+  background-color: blue;
 }
 
 .main{
@@ -45,24 +48,28 @@
 }
 
 .buttonContainer{
-  padding: 210px;
-  border-left: -30px;
-  background-color: rgb(18, 71,52);
+  margin-top: 250px;
+  margin-left: -550px;
+  width: auto;
+  height: 0px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.landingbutton{
+.loginbutton{
   width: 200px;
   height: 55px;
-  display: flex;
-  background-color: rgb(18, 71,52);
+  margin-right: 50px;
+  margin-left: -200px;
 }
 
-.row{
-  border-radius: 10px;
+.registerbutton{
+  width: 200px;
+  height: 55px;
 }
 
 .Row-Container{
-  background-color: rgb(232, 117,0);
+  background-color: rgba(232, 116, 0, 0);
 }
 
 .Col-Container{
