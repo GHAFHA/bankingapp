@@ -1,0 +1,29 @@
+.registration-main{
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(232, 117,0);
+}
+
+.form-container{
+    width: 700px;
+    height: 450px;
+    z-index: 2;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+}
+
+.form.header{
+    background-color: blue;
+}
+
+.Row-Container{
+    background-color: rgba(232, 116, 0, 0);
+  }
+
+  .Col-Container{
+    background-color: rgb(232, 117,0);
+  }

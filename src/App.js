@@ -1,17 +1,20 @@
+/*This file and project (files, organization of folders, github) was set-up by Noel Johnson nxj190008 */
+
 import React, {useState} from 'react';
 import './App.css';
 // We use Route in order to define the different routes of our application
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //importing all the pages need for the app
-import AccountPage from './components/accountpage';
-import SettingsPage from './components/settingspage';
-import TransactionsListPage from './components/transactionslistpage';
-import LoginPage from './components/loginpage';
-import HomePage from './components/Homepage';
-import Notifications from './components/NotificationPage';
-import SecuritySettings from './components/SecuritySettingPage';
-import UserInfo from './components/UserInfoPage';
+import AccountPage from './components/screens/accountpage';
+import SettingsPage from './components/screens/settingspage';
+import TransactionsListPage from './components/screens/transactionslistpage';
+import LoginPage from './components/screens/loginpage';
+import HomePage from './components/screens/Homepage';
+import Notifications from './components/screens/NotificationPage';
+import SecuritySettings from './components/screens/SecuritySettingPage';
+import UserInfo from './components/screens/UserInfoPage';
+import Registration from './components/screens/registration';
 
 //importing the components needed for the app
 import Navbar from './navbar/Navbar';
@@ -28,6 +31,7 @@ function App() {
         <Route path="/settings" element={<SettingsPage />}></Route>
         <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/registration" element={<Registration />}></Route>
         <Route path="/userinfo" element={<UserInfo />}></Route>
         <Route path="/securitysettings" element={<SecuritySettings />}></Route>
         <Route path="/notificationsettings" element={<Notifications />}></Route>
