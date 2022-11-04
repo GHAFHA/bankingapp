@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
     return(
-        <div className ="main">
-            <Container className="container-class">
+        <div className ="landingpage-main">
+            <Container>
                 <Row className="Row-Container">
                     <Col className="Col-Container">
                     <div className="content-container">

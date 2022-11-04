@@ -11,7 +11,7 @@ import SettingsPage from './components/screens/settingspage';
 import TransactionsListPage from './components/screens/transactionslistpage';
 import LoginPage from './components/screens/loginpage';
 import HomePage from './components/screens/Homepage';
-import registration from './components/screens/registration';
+import Registration from './components/screens/Registration';
 
 //importing the components needed for the app
 import Navbar from './navbar/Navbar';
@@ -28,7 +28,7 @@ function App() {
         <Route path="/settings" element={<SettingsPage />}></Route>
         <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/registration" element={<registration />}></Route>
+        <Route path="/registration" element={<Registration />}></Route>
       </Routes>
     </div>
     </BrowserRouter>
