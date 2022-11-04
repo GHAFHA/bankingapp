@@ -6,12 +6,14 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //importing all the pages need for the app
-import AccountPage from './components/screens/accountpage';
-import SettingsPage from './components/screens/settingspage';
-import TransactionsListPage from './components/screens/transactionslistpage';
-import LoginPage from './components/screens/loginpage';
-import HomePage from './components/screens/Homepage';
-import Registration from './components/screens/Registration';
+import AccountPage from './components/accountpage';
+import SettingsPage from './components/settingspage';
+import TransactionsListPage from './components/transactionslistpage';
+import LoginPage from './components/loginpage';
+import HomePage from './components/Homepage';
+import Notifications from './components/NotificationPage';
+import SecuritySettings from './components/SecuritySettingPage';
+import UserInfo from './components/UserInfoPage';
 
 //importing the components needed for the app
 import Navbar from './navbar/Navbar';
@@ -29,6 +31,9 @@ function App() {
         <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/registration" element={<Registration />}></Route>
+        <Route path="/userinfo" element={<UserInfo />}></Route>
+        <Route path="/securitysettings" element={<SecuritySettings />}></Route>
+        <Route path="/notificationsettings" element={<Notifications />}></Route>
       </Routes>
     </div>
     </BrowserRouter>
