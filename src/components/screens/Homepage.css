@@ -1,13 +1,13 @@
 /*This file and project was set-up by Noel Johnson nxj190008 */
 .title{
-  font-size: 100px;
+  font-size: 75px;
   display: flex;
   background-color: rgb(18, 71,52);
   color: white;
 }
 
 .subtitle{
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
   display: flex;
   background-color: rgb(18, 71,52);
@@ -16,12 +16,13 @@
 }
 
 .content-container{
-  width: 100px;
-  height: 500px;
+  width: 700px;
+  height: 450px;
   text-align: center;
   z-index: 2;
   background-color: rgb(18, 71,52);
   border-radius: 10px;
+  display: flex;
 
 }
 
@@ -30,6 +31,7 @@
   background-color: rgb(18, 71,52);
   height: 100px;
   width: auto;
+  padding: 10px;
 }
 
 .main{
@@ -38,15 +40,13 @@
   align-items: center;
   background-position: center;
   background-size: cover;
-  background-color: rgb(232, 117,0);
+  background-image: url("/Users/noeljohnson/Documents/GitHub/bankingapp/src/images/money.jpg");
   z-index: 1;
 }
 
 .buttonContainer{
-  margin-top: 50px;
-  justify-content: space-evenly;
-  display: flex;
-  padding: 75px;
+  padding: 210px;
+  border-left: -30px;
   background-color: rgb(18, 71,52);
 }
 
@@ -54,10 +54,17 @@
   width: 200px;
   height: 55px;
   display: flex;
-  border-left: -30px;
   background-color: rgb(18, 71,52);
 }
 
 .row{
   border-radius: 10px;
+}
+
+.Row-Container{
+  background-color: rgb(232, 117,0);
+}
+
+.Col-Container{
+  background-color: rgb(232, 117,0);
 }

@@ -11,21 +11,23 @@ const HomePage = () => {
     return(
         <div className ="main">
             <Container>
-                <Row>
+                <Row className="Row-Container">
+                    <Col className="Col-Container">
                     <div className="content-container">
                         <div className="text-container">
                             <h1 className="title">CometWallet</h1>
-                            <p className="subtitle">Helping Students manage their finances</p>
+                            <p className="subtitle">Helping UTD students manage their finaces, one card at a time</p>
                         </div>
                         <div className="buttonContainer">
                             <Link to ="./login">
-                                <Button size="lg" className="landingbutton">Login</Button>
+                                <Button className="landingbutton">Login</Button>
                             </Link>
                             <Link to ="./registration">
-                                <Button className="landingbutton" variant="outline-primary" size='lg'>Register</Button>
+                                <Button className="landingbutton">Register</Button>
                             </Link>
                         </div>
                     </div>
+                    </Col>
                 </Row>
             </Container>
         </div>
@@ -33,3 +35,20 @@ const HomePage = () => {
 }
 
 export default HomePage;
+
+/*
+                    <div className="content-container">
+                        <div className="text-container">
+                            <h1 className="title">CometWallet</h1>
+                            <p className="subtitle">Helping Students manage their finances</p>
+                        </div>
+                        <div className="buttonContainer">
+                            <Link to ="./login">
+                                <Button size="lg" className="landingbutton" >Login</Button>
+                            </Link>
+                            <Link to ="./registration">
+                                <Button className="landingbutton" variant="outline-primary" size='lg'>Register</Button>
+                            </Link>
+                        </div>
+                    </div>
+*/
