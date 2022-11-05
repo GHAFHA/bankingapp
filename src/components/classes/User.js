@@ -11,6 +11,10 @@ class User {
         this.institutionalId = institutionalId;
         this.displayName = displayName;
         this.lastLogin = null;
+
+        this.bankAccountList = [];
+        this.creditCardAccountList = [];
+
         this.userSettings = new UserSettings(this);
         this.cometCashAccount = new CometCashAccount(institutionalId, this.retrieveCometCashBalance())
     }
