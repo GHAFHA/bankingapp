@@ -1,0 +1,77 @@
+/*This file and project was set-up by Noel Johnson nxj190008 */
+.title{
+  font-size: 95px;
+  background-color: rgb(232, 117,0);
+  color: white;
+}
+
+.subtitle{
+  font-size: 20px;
+  padding-top: 10px;
+  background-color: rgb(232, 117,0);
+  color: white;
+
+}
+
+.content-container{
+  width: 700px;
+  height: 450px;
+  z-index: 2;
+  background-color: rgb(232, 117,0);
+  border-radius: 10px;
+  display: flex;
+
+}
+
+.text-container{
+  background-color: black;
+  background-color: rgb(232, 117,0);
+  height: 100px;
+  width: auto;
+  padding: 10px;
+}
+
+.outer-box{
+  width: 720px;
+  height: 475px;
+  background-color: blue;
+}
+
+.landingpage-main{
+  min-height: 93vh;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-image: url("/Users/noeljohnson/Documents/GitHub/bankingapp/src/images/money.jpg");
+  z-index: 1;
+}
+
+.buttonContainer{
+  margin-top: 250px;
+  margin-left: -550px;
+  width: auto;
+  height: 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.loginbutton{
+  width: 200px;
+  height: 55px;
+  margin-right: 50px;
+  margin-left: -200px;
+}
+
+.registerbutton{
+  width: 200px;
+  height: 55px;
+}
+
+.Row-Container{
+  background-color: rgba(232, 116, 0, 0);
+}
+
+.Col-Container{
+  background-color: rgb(232, 117,0);
+}
