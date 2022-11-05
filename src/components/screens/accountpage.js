@@ -5,10 +5,10 @@
 
 import React, { useState } from "react";
 import { Accordion, Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
-import Header from "./UI/Header";
+import Header from "../UI/header";
 
-import BankAccount from "./classes/BankAccount";
-import CreditCardAccount from "./classes/CreditCardAccount";
+import BankAccount from "../classes/BankAccount";
+import CreditCardAccount from "../classes/CreditCardAccount";
 
 
 const AccountPage = () => {
