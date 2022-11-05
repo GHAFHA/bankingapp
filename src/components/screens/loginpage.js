@@ -2,6 +2,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
+import LoginController from '../classes/LoginController'
+
 const Login = () => {
     return (
         <div>

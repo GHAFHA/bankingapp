@@ -3,6 +3,8 @@ import Accordion from 'react-bootstrap/Accordion';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 
+import TransactionController from "../classes/TransactionController";
+
 const TransactionsListPage = () => {
     return (
         <div>
