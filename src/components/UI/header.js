@@ -1,6 +1,6 @@
 /*This file and project was set-up by Noel Johnson nxj190008 */
 import React from "react";
-import "./Header.css"
+import "./header.css"
 
 const Header = ({title, description,image, longdescription}) =>{
 
