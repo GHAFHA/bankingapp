@@ -1,4 +1,14 @@
-/*This file and project (files, organization of folders, github) was set-up by Noel Johnson nxj190008 */
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008) and edited by Vaughan McInerney (vmm190002).
+
+    This project (files, organization of folders, github) was set-up by Noel Johnson (nxj190008).
+
+    This is the main file of the React application.
+*/
 
 import React, {useState} from 'react';
 import './App.css';
@@ -14,7 +24,6 @@ import HomePage from './components/screens/Homepage';
 import Notifications from './components/screens/NotificationPage';
 import SecuritySettings from './components/screens/SecuritySettingPage';
 import UserInfo from './components/screens/UserInfoPage';
-import Registration from './components/screens/registration';
 
 //importing the components needed for the app
 import Navbar from './navbar/Navbar';
@@ -31,7 +40,6 @@ function App() {
         <Route path="/settings" element={<SettingsPage />}></Route>
         <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/registration" element={<Registration />}></Route>
         <Route path="/userinfo" element={<UserInfo />}></Route>
         <Route path="/securitysettings" element={<SecuritySettings />}></Route>
         <Route path="/notificationsettings" element={<Notifications />}></Route>

@@ -1,4 +1,14 @@
-/*This file and project was set-up by Noel Johnson nxj190008 */
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008)
+
+    This file is part of the user interface.  It generates the navigation bar seen 
+    at the top of every page when the user is logged into the CometWallet app.
+*/
+
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
