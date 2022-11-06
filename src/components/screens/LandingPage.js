@@ -32,12 +32,6 @@ const LandingPage = () => {
                             <Link to ="./login">
                                 <Button className="loginbutton" variant="dark">Login</Button>
                             </Link>
-                            <Link to ="./registration">
-                                <Button 
-                                variant="outline-dark"
-                                size="lg"
-                                className="registerbutton">Register</Button>
-                            </Link>
                         </div>
                     </div>
                     </Col>

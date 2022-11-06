@@ -24,7 +24,7 @@ import LandingPage from './components/screens/LandingPage';
 import Notifications from './components/screens/NotificationPage';
 import SecuritySettings from './components/screens/SecuritySettingPage';
 import UserInfo from './components/screens/UserInfoPage';
-import Registration from './components/screens/registration';
+//import Registration from './components/screens/registration';
 import Homepage from './components/screens/Homepage';
 
 //importing the components needed for the app
