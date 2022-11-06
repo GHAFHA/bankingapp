@@ -2,12 +2,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
+//state management using useState and useReducer
+
 import LoginController from '../classes/LoginController'
 
 const Login = () => {
     return (
         <div>
-            <Container>
+            <Container> Login Page
             </Container>
         </div>
     )
