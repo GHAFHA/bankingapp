@@ -3,7 +3,7 @@
     Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
     Professor Srimathi Srinivasan
 
-    This file created by Noel Johnson (nxj190008) and edited by Vaughan McInerney (vmm190002).
+    This file created by Noel Johnson (nxj190008).
 
     This project (files, organization of folders, github) was set-up by Noel Johnson (nxj190008).
 
