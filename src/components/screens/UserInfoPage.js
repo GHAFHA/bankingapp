@@ -8,13 +8,15 @@
     This file is part of the user interface.  It generates the user information page 
     in the CometWallet app under the settings tab. 
 */
-import Table from 'react-bootstrap/Table';
+import {Table, Container} from 'react-bootstrap';
 import React from "react";
 
 const UserInfo = () => {
     return (
          
-        
+        <Container>
+
+      
         <Table striped>
          
            
@@ -98,6 +100,7 @@ const UserInfo = () => {
             </tr>
           </tbody>
         </Table>
+        </Container>
       );
 }
 
