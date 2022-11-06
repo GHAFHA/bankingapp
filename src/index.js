@@ -1,3 +1,13 @@
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008).
+
+    This JavaScript file is responsible for generating the main webpage by importing the App component.
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
