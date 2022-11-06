@@ -3,7 +3,7 @@
     Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
     Professor Srimathi Srinivasan
 
-    This file created by Noel Johnson (nxj190008) and edited by Vaughan McInerney (vmm190002)
+    This file created by Noel Johnson (nxj190008)
 
     This file is part of the user interface.  It generates the landing page 
     in the CometWallet app, which is displayed before the user is logged in.
