@@ -16,10 +16,12 @@ import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 
 import TransactionController from "../classes/TransactionController";
+import { Container } from "react-bootstrap";
 
 const TransactionsListPage = () => {
     return (
         <div>
+            <Container>
             <Accordion>
                 <Accordion.Item eventKey="0">
                 <Accordion.Header><span style={{fontWeight: 'bold'}}>Dunkin' Donuts</span></Accordion.Header>
@@ -124,6 +126,7 @@ const TransactionsListPage = () => {
                 </Accordion.Body>
             </Accordion.Item>
             </Accordion>
+            </Container>
 
         </div>
     )

@@ -11,13 +11,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-// import necessary classes
+//state management using useState and useReducer
+
 import LoginController from '../classes/LoginController'
 
 const Login = () => {
     return (
         <div>
-            <Container>
+            <Container> Login Page
             </Container>
         </div>
     )
