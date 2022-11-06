@@ -1,12 +1,28 @@
-/*This file and project was set-up by Noel Johnson nxj190008 */
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008) and edited by Vaughan McInerney (vmm190002)
+
+    This file is part of the user interface.  It generates the landing page 
+    in the CometWallet app, which is displayed before the user is logged in.
+*/
+
+// import necessary UI components
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Container } from "react-bootstrap";
+
+// import stylesheets
 import "./Homepage.css"
+
+// import application structuring tools
 import { Link } from "react-router-dom";
 
+// main function that returns the HTML for the homepage
 const HomePage = () => {
     return(
         <div className ="landingpage-main">
@@ -16,7 +32,7 @@ const HomePage = () => {
                     <div className="content-container">
                         <div className="text-container">
                             <h1 className="title">CometWallet</h1>
-                            <p className="subtitle">Helping UTD students manage their finaces, one card at a time</p>
+                            <p className="subtitle">Helping UTD students manage their finances, one card at a time</p>
                         </div>
                         <div className="buttonContainer">
                             <Link to ="./login">
@@ -32,20 +48,3 @@ const HomePage = () => {
 }
 
 export default HomePage;
-
-/*
-                    <div className="content-container">
-                        <div className="text-container">
-                            <h1 className="title">CometWallet</h1>
-                            <p className="subtitle">Helping Students manage their finances</p>
-                        </div>
-                        <div className="buttonContainer">
-                            <Link to ="./login">
-                                <Button size="lg" className="landingbutton" >Login</Button>
-                            </Link>
-                            <Link to ="./registration">
-                                <Button className="landingbutton" variant="outline-primary" size='lg'>Register</Button>
-                            </Link>
-                        </div>
-                    </div>
-*/

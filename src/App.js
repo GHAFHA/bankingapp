@@ -1,4 +1,14 @@
-/*This file and project (files, organization of folders, github) was set-up by Noel Johnson nxj190008 */
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008) and edited by Vaughan McInerney (vmm190002).
+
+    This project (files, organization of folders, github) was set-up by Noel Johnson (nxj190008).
+
+    This is the main file of the React application.
+*/
 
 import React, {useState} from 'react';
 import './App.css';
