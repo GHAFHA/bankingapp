@@ -1,3 +1,15 @@
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Oscar Mata-Galvan (oxm180003)
+
+    This file is part of the user interface.  It generates the security settings page 
+    in the CometWallet app, which displays options such as login notifications and 2FA.
+*/
+
+
 import React from "react";
 import Table from "react-bootstrap/Table";
 import Stack from "react-bootstrap/Stack";

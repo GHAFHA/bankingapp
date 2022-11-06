@@ -1,3 +1,15 @@
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file edited by Dean Greenberg (dxg190011)
+
+    This file is part of the user interface.  It generates the transaction list page 
+    in the CometWallet app, which shows a list of all transactions completed by the user
+    currently logged into the app.
+*/
+
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Stack from 'react-bootstrap/Stack';

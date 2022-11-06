@@ -1,5 +1,11 @@
 /*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
     This file created by Vaughan McInerney (vmm190002)
+
+    This is an implementation of the CreditCardAccount class.
 */
 
 import FinancialAccount from "./FinancialAccount";

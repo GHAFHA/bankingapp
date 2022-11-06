@@ -1,27 +1,41 @@
 /*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
     This file created by Vaughan McInerney (vmm190002)
+
+    This file is part of the user interface.  It generates the Account page in the CometWallet app.
 */
 
 
 import React, { useState } from "react";
+
+// import useful bootstrap components, and the header/navigation bar
 import { Accordion, Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import Header from "../UI/header";
 
+// import classes to use on the page
 import BankAccount from "../classes/BankAccount";
 import CreditCardAccount from "../classes/CreditCardAccount";
 
-
+// main function that returns the HTML for the account page.
 const AccountPage = () => {
 
+    // create state variables to temporarily save data entered on the page 
     const [bankAccountList, setBankAccountList] = useState([]);
     const [creditCardAccountList, setCreditCardAccountList] = useState([]);
 
+    // create state variables to remember the data entered in forms/modals
     const [addBankAccountFormData, setAddBankAccountFormData] = useState({})
     const [addCreditCardAccountFormData, setAddCreditCardAccountFormData] = useState({})
 
+    // create state variables to remember whether each modal is visible or hidden
     const [showAddBankAccountModal, setShowAddBankAccountModal] = useState(false);
     const [showAddCreditCardAccountModal, setShowAddCreditCardAccountModal] = useState(false);
 
+
+    // create helper functions for opening and closing the "Add Account" modals
     const handleBankAccountModalShow = () => {
         setShowAddBankAccountModal(true);
         setAddBankAccountFormData({});
@@ -31,17 +45,7 @@ const AccountPage = () => {
         setShowAddBankAccountModal(false);
         setAddBankAccountFormData({});
     }
-
-    const handleBankAccountInputChangeAccountNumber = (e) => {
-        setAddBankAccountFormData({...addBankAccountFormData, accountNumber: e.target.value});
-    }
-    const handleBankAccountInputChangeRoutingNumber = (e) => {
-        setAddBankAccountFormData({...addBankAccountFormData, routingNumber: e.target.value});
-    }
-    const handleBankAccountInputChangeAccountName = (e) => {
-        setAddBankAccountFormData({...addBankAccountFormData, accountName: e.target.value});
-    }
-
+    
     const handleCreditCardAccountModalShow = () => {
         setShowAddCreditCardAccountModal(true);
         setAddCreditCardAccountFormData({});
@@ -52,6 +56,35 @@ const AccountPage = () => {
         setAddCreditCardAccountFormData({});
     }
 
+
+    // create helper functions for changing the state variables 
+    // whenever a form field is updated in a modal
+    const handleBankAccountInputChangeAccountNumber = (e) => {
+        setAddBankAccountFormData({...addBankAccountFormData, accountNumber: e.target.value});
+    }
+    const handleBankAccountInputChangeRoutingNumber = (e) => {
+        setAddBankAccountFormData({...addBankAccountFormData, routingNumber: e.target.value});
+    }
+    const handleBankAccountInputChangeAccountName = (e) => {
+        setAddBankAccountFormData({...addBankAccountFormData, accountName: e.target.value});
+    }
+
+    const handleCreditCardAccountInputChangeCardNumber = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cardNumber: e.target.value});
+    }
+    const handleCreditCardAccountInputChangeExpirationDate = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, expirationDate: e.target.value});
+    }
+    const handleCreditCardAccountInputChangeCvvCode = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cvv: e.target.value});
+    }
+    const handleCreditCardAccountInputChangeAccountName = (e) => {
+        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, accountName: e.target.value});
+    }
+
+
+    // create helper functions for adding BankAccount 
+    // and CreditCardAccount objects to the account lists
     const addBankAccount = () => {
         let newAccountData = {...addBankAccountFormData};
         handleBankAccountModalClose();
@@ -68,24 +101,14 @@ const AccountPage = () => {
         ]);
     }
 
-    const handleCreditCardAccountInputChangeCardNumber = (e) => {
-        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cardNumber: e.target.value});
-    }
-    const handleCreditCardAccountInputChangeExpirationDate = (e) => {
-        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, expirationDate: e.target.value});
-    }
-    const handleCreditCardAccountInputChangeCvvCode = (e) => {
-        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cvv: e.target.value});
-    }
-    const handleCreditCardAccountInputChangeAccountName = (e) => {
-        setAddCreditCardAccountFormData({...addCreditCardAccountFormData, accountName: e.target.value});
-    }
-
     
-
+    // create variables to hold the HTML elements displaying account information
+    // the interface uses a bootstrap "Accordion" to expand and collapse account details.
     const bankAccordion = [];
     const creditCardAccordion = [];
 
+    // build the visual list of bank accounts by pushing 
+    // accordion items into the array
     for(let b of bankAccountList) {
         bankAccordion.push(
             <Accordion.Item eventKey={b.accountId}>
@@ -112,6 +135,8 @@ const AccountPage = () => {
         )
     }
 
+    // build the visual list of credit card accounts by pushing 
+    // accordion items into the array
     for(let c of creditCardAccountList) {
         creditCardAccordion.push(
             <Accordion.Item eventKey={c.accountId}>
@@ -138,52 +163,9 @@ const AccountPage = () => {
         )
     }
 
-    return (
-        <>
-        <Container>
-            <Row>&nbsp;</Row>
-            <Row>
-                <Col>
-                    <Header title="Accounts" />
-                </Col>
-                <Col>&nbsp;</Col>
-                <Col>
-                    
-                </Col>
-            </Row>
-            <Row>&nbsp;</Row>
-            <Row>
-                <Col>
-                    <Accordion>
-                        <Accordion.Item eventKey="0">
-                            <Accordion.Header>Bank Accounts</Accordion.Header>
-                            <Accordion.Body>
-                                <Accordion>{bankAccordion}</Accordion>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
-                    <div>&nbsp;</div>
-                    <Button onClick={handleBankAccountModalShow}>Add Bank Account</Button>
-                    <div>&nbsp;</div>
-                    <Accordion>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>Credit Card Accounts</Accordion.Header>
-                            <Accordion.Body>
-                                <Accordion>{creditCardAccordion}</Accordion>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
-                    <div>&nbsp;</div>
-                    <Button onClick={handleCreditCardAccountModalShow}>Add Credit Card Account</Button>
-                    <div>&nbsp;</div>
-                </Col>
-            </Row>
-            <Row>&nbsp;</Row>
-            <Row>
-                
-            </Row>
-        </Container>
-        <Modal show={showAddBankAccountModal} onHide={handleBankAccountModalClose} backdrop="static">
+
+    let bankAccountModal = (
+<Modal show={showAddBankAccountModal} onHide={handleBankAccountModalClose} backdrop="static">
             <Modal.Header>
                 <Modal.Title>Add Bank Account</Modal.Title>
             </Modal.Header>
@@ -231,6 +213,9 @@ const AccountPage = () => {
                 </Button>
             </Modal.Footer>
         </Modal>
+    )
+
+    let creditCardAccountModal = (
         <Modal show={showAddCreditCardAccountModal} onHide={handleCreditCardAccountModalClose} backdrop="static">
             <Modal.Header>
                 <Modal.Title>Add Credit Card Account</Modal.Title>
@@ -289,6 +274,62 @@ const AccountPage = () => {
                 </Button>
             </Modal.Footer>
         </Modal>
+    )
+
+
+
+    // This is the return statement for the AccountPage function.  
+    // The return value is an entire HTML webpage which will be 
+    // parsed and displayed to the user.
+    return (
+        <>
+        <Container>
+            <Row>&nbsp;</Row>
+            <Row>
+                <Col>
+                    <Header title="Accounts" />
+                </Col>
+                <Col>&nbsp;</Col>
+                <Col>
+                    
+                </Col>
+            </Row>
+            <Row>&nbsp;</Row>
+            <Row>
+                <Col>
+                    <Accordion>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>Bank Accounts</Accordion.Header>
+                            <Accordion.Body>
+                                <Accordion>{bankAccordion}</Accordion>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <div>&nbsp;</div>
+                    <Button onClick={handleBankAccountModalShow}>Add Bank Account</Button>
+                    <div>&nbsp;</div>
+                    <Accordion>
+                        <Accordion.Item eventKey="1">
+                            <Accordion.Header>Credit Card Accounts</Accordion.Header>
+                            <Accordion.Body>
+                                <Accordion>{creditCardAccordion}</Accordion>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <div>&nbsp;</div>
+                    <Button onClick={handleCreditCardAccountModalShow}>Add Credit Card Account</Button>
+                    <div>&nbsp;</div>
+                </Col>
+            </Row>
+            <Row>&nbsp;</Row>
+            <Row>
+                
+            </Row>
+        </Container>
+
+        {/* The modal objects, although hidden by default, must be returned as elements */}
+        {bankAccountModal}
+        {creditCardAccountModal}
         </>
     )
 }
