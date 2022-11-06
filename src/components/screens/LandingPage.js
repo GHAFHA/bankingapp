@@ -1,4 +1,14 @@
-/*This file and project was set-up by Noel Johnson nxj190008 */
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    
+    Professor Srimathi Srinivasan
+    
+    This file created by Noel Johnson (nxj190008)
+    
+    This CSS file provides styling for the Homepage component.
+*/
+
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
