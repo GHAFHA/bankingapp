@@ -16,11 +16,11 @@ import Table from "react-bootstrap/Table";
 import Stack from "react-bootstrap/Stack";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-
+import useState from 'react';
 
 const SecuritySetting = () => {
     
-  
+  const [x123, setx123] = useState(false);
 
     
 
@@ -65,10 +65,10 @@ const SecuritySetting = () => {
         <tr>
           <td colSpan={2}>Two-Factor Authentication</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="options" defaultValue={2}>
-        <ToggleButton id="tbg-radio-1" value={1}>
+        <ToggleButton id="tbg-radio-1" value={1} onClick={() => setx123(true)}>
           Active
         </ToggleButton>
-        <ToggleButton id="tbg-radio-2" value={2} >
+        <ToggleButton id="tbg-radio-2" value={2} onClick = {() => setx123(false)} >
           Deactive
         </ToggleButton>
       </ToggleButtonGroup></td>
@@ -144,8 +144,6 @@ const SecuritySetting = () => {
       </tbody>
 
     </Table>
-    
-   
 
     
         </div>
