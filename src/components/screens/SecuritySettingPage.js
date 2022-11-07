@@ -17,13 +17,11 @@ import Stack from "react-bootstrap/Stack";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import useState from 'react';
+import UserSettings from "../classes/UserSettings";
+
 
 const SecuritySetting = () => {
-    
-  const [x123, setx123] = useState(false);
-
-    
-
+ 
   
 
     return (
@@ -65,10 +63,10 @@ const SecuritySetting = () => {
         <tr>
           <td colSpan={2}>Two-Factor Authentication</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="options" defaultValue={2}>
-        <ToggleButton id="tbg-radio-1" value={1} onClick={() => setx123(true)}>
+        <ToggleButton id="tbg-radio-1" value={1}>
           Active
         </ToggleButton>
-        <ToggleButton id="tbg-radio-2" value={2} onClick = {() => setx123(false)} >
+        <ToggleButton id="tbg-radio-2" value={2}>
           Deactive
         </ToggleButton>
       </ToggleButtonGroup></td>
@@ -148,7 +146,7 @@ const SecuritySetting = () => {
     
         </div>
         
-
+    
 
 
         
