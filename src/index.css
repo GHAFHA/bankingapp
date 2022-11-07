@@ -1,0 +1,19 @@
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008).
+
+    This CSS file provides styling for the index webpage.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;600&display=swap');
+
+body{
+    font-family: 'Roboto Mono', sans-serif;;
+}
+
+*{
+    font-family: "Roboto Mono", sans-serif;
+}
