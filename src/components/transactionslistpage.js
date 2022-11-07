@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import Transaction from "./classes/Transaction";
+
 
 const TransactionsListPage = () => {
+
+    const [transactionList, setTransactionList] = useState([
+        new Transaction(null, 30, "Walmart")
+    ]);
+
+    
+
+
     return (
         <div>
             <Accordion>
@@ -103,6 +113,69 @@ const TransactionsListPage = () => {
                     <Stack direction="horizontal" gap={4}>
                         <span style={{fontWeight: 'bold'}}>Amount:</span>
                         $157.42
+                    </Stack>
+                </Accordion.Body>
+                <Accordion.Body>
+                    <Button variant="danger">Dispute Transaction</Button>{' '}
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
+
+            <Accordion>
+                <Accordion.Item eventKey="0">
+                <Accordion.Header><span style={{fontWeight: 'bold'}}>Whataburger</span></Accordion.Header>
+                <Accordion.Body>
+                    <Stack direction="horizontal" gap={5}>
+                        <span style={{fontWeight: 'bold'}}>Date:</span>
+                        September 02, 2022
+                    </Stack>
+                </Accordion.Body>
+                <Accordion.Body>
+                    <Stack direction="horizontal" gap={4}>
+                        <span style={{fontWeight: 'bold'}}>Amount:</span>
+                        $11.02
+                    </Stack>
+                </Accordion.Body>
+                <Accordion.Body>
+                    <Button variant="danger">Dispute Transaction</Button>{' '}
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
+
+            <Accordion>
+                <Accordion.Item eventKey="0">
+                <Accordion.Header><span style={{fontWeight: 'bold'}}>JCPenny</span></Accordion.Header>
+                <Accordion.Body>
+                    <Stack direction="horizontal" gap={5}>
+                        <span style={{fontWeight: 'bold'}}>Date:</span>
+                        September 02, 2022
+                    </Stack>
+                </Accordion.Body>
+                <Accordion.Body>
+                    <Stack direction="horizontal" gap={4}>
+                        <span style={{fontWeight: 'bold'}}>Amount:</span>
+                        $61.12
+                    </Stack>
+                </Accordion.Body>
+                <Accordion.Body>
+                    <Button variant="danger">Dispute Transaction</Button>{' '}
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
+
+            <Accordion>
+                <Accordion.Item eventKey="0">
+                <Accordion.Header><span style={{fontWeight: 'bold'}}>Amazon</span></Accordion.Header>
+                <Accordion.Body>
+                    <Stack direction="horizontal" gap={5}>
+                        <span style={{fontWeight: 'bold'}}>Date:</span>
+                        August 30, 2022
+                    </Stack>
+                </Accordion.Body>
+                <Accordion.Body>
+                    <Stack direction="horizontal" gap={4}>
+                        <span style={{fontWeight: 'bold'}}>Amount:</span>
+                        $55.40
                     </Stack>
                 </Accordion.Body>
                 <Accordion.Body>
