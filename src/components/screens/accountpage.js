@@ -33,6 +33,10 @@ const AccountPage = () => {
     // create state variables to remember whether each modal is visible or hidden
     const [showAddBankAccountModal, setShowAddBankAccountModal] = useState(false);
     const [showAddCreditCardAccountModal, setShowAddCreditCardAccountModal] = useState(false);
+    const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
+
+    // create a state variable to track which account is being deleted
+    const [accountPendingDeletion, setAccountPendingDeletion] = useState(null);
 
 
     // create helper functions for opening and closing the "Add Account" modals
@@ -54,6 +58,16 @@ const AccountPage = () => {
     const handleCreditCardAccountModalClose = () => {
         setShowAddCreditCardAccountModal(false);
         setAddCreditCardAccountFormData({});
+    }
+
+    const handleDeleteAccountModalShow = (accountToDelete) => {
+        setAccountPendingDeletion(accountToDelete);
+        setShowDeleteAccountModal(true);
+    }
+
+    const handleDeleteAccountModalClose = () => {
+        setShowDeleteAccountModal(false);
+        setAccountPendingDeletion(null);
     }
 
 
@@ -101,6 +115,16 @@ const AccountPage = () => {
         ]);
     }
 
+    const deleteAccount = () => {
+        handleDeleteAccountModalClose();
+        if(CreditCardAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
+            setCreditCardAccountList(creditCardAccountList.filter(n => n != accountPendingDeletion));
+        }
+        if(BankAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
+            setBankAccountList(bankAccountList.filter(n => n != accountPendingDeletion));
+        }
+    }
+
     
     // create variables to hold the HTML elements displaying account information
     // the interface uses a bootstrap "Accordion" to expand and collapse account details.
@@ -111,7 +135,7 @@ const AccountPage = () => {
     // accordion items into the array
     for(let b of bankAccountList) {
         bankAccordion.push(
-            <Accordion.Item eventKey={b.accountId}>
+            <Accordion.Item key={b.accountId} eventKey={b.accountId}>
                 <Accordion.Header>{b.displayName}</Accordion.Header>
                 <Accordion.Body>
                     <Container>
@@ -126,7 +150,7 @@ const AccountPage = () => {
                         <Row>&nbsp;</Row>
                         <Row>
                             <Col>
-                                <Button variant="danger">Delete</Button>
+                                <Button variant="danger" onClick={() => {handleDeleteAccountModalShow(b)}}>Delete</Button>
                             </Col>
                         </Row>
                     </Container>
@@ -139,7 +163,7 @@ const AccountPage = () => {
     // accordion items into the array
     for(let c of creditCardAccountList) {
         creditCardAccordion.push(
-            <Accordion.Item eventKey={c.accountId}>
+            <Accordion.Item key={c.accountId} eventKey={c.accountId}>
                 <Accordion.Header>{c.displayName}</Accordion.Header>
                 <Accordion.Body>
                     <Container>
@@ -154,7 +178,7 @@ const AccountPage = () => {
                         <Row>&nbsp;</Row>
                         <Row>
                             <Col>
-                                <Button variant="danger">Delete</Button>
+                                <Button variant="danger" onClick={() => {handleDeleteAccountModalShow(c)}}>Delete</Button>
                             </Col>
                         </Row>
                     </Container>
@@ -276,6 +300,25 @@ const AccountPage = () => {
         </Modal>
     )
 
+    let deleteAccountModal = (
+        <Modal show={showDeleteAccountModal} onHide={handleDeleteAccountModalClose} backdrop="static">
+            <Modal.Header>
+                <Modal.Title>Delete Account</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                Are you sure you want to delete this account?
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleDeleteAccountModalClose}>
+                    Cancel
+                </Button>
+                <Button variant="danger" type="submit" onClick={deleteAccount}>
+                    Delete Account
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    )
+
 
 
     // This is the return statement for the AccountPage function.  
@@ -330,6 +373,7 @@ const AccountPage = () => {
         {/* The modal objects, although hidden by default, must be returned as elements */}
         {bankAccountModal}
         {creditCardAccountModal}
+        {deleteAccountModal}
         </>
     )
 }

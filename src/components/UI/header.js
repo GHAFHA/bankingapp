@@ -11,9 +11,9 @@
 import React from "react";
 import "./header.css"
 
-const Header = ({title, description,image, longdescription}) =>{
+const Header = ({ title, description, image, longdescription }) => {
 
-    return(
+    return (
         <div className="header-container">
             <h1>{title}</h1>
             <h2>{description}</h2>
