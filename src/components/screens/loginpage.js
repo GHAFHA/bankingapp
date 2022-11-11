@@ -9,19 +9,31 @@
 */
 
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Form, Button, Row, Col, Grid } from "react-bootstrap";
+import "./loginpage.css";
 
 //state management using useState and useReducer
 
-import LoginController from '../classes/LoginController'
+import LoginController from "../classes/LoginController";
 
 const Login = () => {
-    return (
-        <div>
-            <Container> Login Page
-            </Container>
+  return (
+    <div>
+        <Row>
+        <div id="loginpage-main">
+            <div id="form-holder">
+            <h1 id="login-text">Login</h1>
+                <div id="form-container">
+                        <input id="input-id" type="text" placeholder ="Enter Netid"></input>
+                        <input id="input-id" type="password" placeholder="Enter Password"></input>
+                            <button id="form-button"> Login </button>
+                            <button id="form-button"> Forgot Password </button>
+                </div>
+          </div>
         </div>
-    )
-}
+        </Row>
+    </div>
+  );
+};
 
 export default Login;
