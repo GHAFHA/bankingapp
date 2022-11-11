@@ -56,7 +56,6 @@ class BankAccount extends FinancialAccount {
             return false;
         }
         for(let digit of routingNumberToValidate) {
-            console.log(digit);
             if(digit < '0' || digit > '9') {
                 return false;
             }
