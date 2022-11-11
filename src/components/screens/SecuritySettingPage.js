@@ -29,12 +29,12 @@ const SecuritySetting = () => {
           
           
         
-            
+          <Container>
             <h1><center>Security Settings</center></h1>
             <h2><font size = "4">This system is using Single sign-on(SSO)</font></h2>
             
             <div>&nbsp;</div>
-            <Container>
+            
             <Table striped bordered hover size="lg">
       <thead>
         <tr>
