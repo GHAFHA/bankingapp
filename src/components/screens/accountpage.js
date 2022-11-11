@@ -102,15 +102,27 @@ const AccountPage = () => {
 
     const handleCreditCardAccountInputChangeCardNumber = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cardNumber: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, cardNumber: e.target.value})
+        )
     }
     const handleCreditCardAccountInputChangeExpirationDate = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, expirationDate: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, expirationDate: e.target.value})
+        )
     }
     const handleCreditCardAccountInputChangeCvvCode = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cvv: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, cvv: e.target.value})
+        )
     }
     const handleCreditCardAccountInputChangeAccountName = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, accountName: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, accountName: e.target.value})
+        )
     }
 
 
@@ -298,7 +310,7 @@ const AccountPage = () => {
                         onChange={handleCreditCardAccountInputChangeExpirationDate}
                         value={addCreditCardAccountFormData.expirationDate}
                     >
-                        <Form.Label>Expiration Date</Form.Label>
+                        <Form.Label>Expiration Date (MM/YYYY)</Form.Label>
                         <Form.Control 
                             type="string"
                             required
