@@ -20,8 +20,6 @@ const Login = () => {
   return (
     <div>
           <Row>
-            <Row>
-              <Col>
         <div id="loginpage-main">
             <div id="form-holder">
               <h1 id="login-text">Login</h1>
@@ -29,15 +27,13 @@ const Login = () => {
                         <input id="input-id" type="text" placeholder ="Enter Netid"></input>
                         <input id="input-id" type="password" placeholder="Enter Password"></input>
                             <button id="form-button"> Login </button>
-                            <button id="form-button"> Forgot Password </button>
+                            <button id="form-button"> Forgot Password ?</button>
               </table>
-          </div>
-          <div id="image-holder">
-          <image id="image"></image>
+              <div id="image-holder">
+                <image id="image"></image>
+              </div>
           </div>
         </div>
-        </Col>
-        </Row>
         </Row>
     </div>
   );

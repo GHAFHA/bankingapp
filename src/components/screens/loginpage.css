@@ -10,8 +10,12 @@
 
 #loginpage-main{
     min-height: 93vh;
-    background-image: url("../../images/wallet.jpg");
-    background-position: center center;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../images/holding.jpg");
+    z-index: 1;
 }
 
 #form-holder{
@@ -20,14 +24,17 @@
     border-radius: 10px;
     padding: 10px;
     position: relative;
-    margin-left: 650px;
+    left: 39%;
+    background-color: rgb(232, 117,0);
+    box-shadow: 10px 10px black;
 
 }
 
 #form-container{
     margin-top: 10px;
-    margin-left: 10px;
-    padding: 10px;
+    margin-left: 23px;
+    padding: 20px;
+    background-color: rgb(232, 117,0);
 }
 
 #input-id{
@@ -36,21 +43,31 @@
     margin: 15px;
     height: 50px;
     width: 300px;
+    border: 10px;
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.783);
     
 }
 
 #form-button{
     border-radius: 5px;
     margin: 15px;
+    background-color: black;
+    color: white;
 }
 
 #login-text{
     text-align: center;
+    background-color: rgb(232, 117,0);
+    color: white;
 }
 
-/* creating the image container */
+/* creating the image container 
 #image-holder{
-    height: 500px;
-    width: 500px;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    top: 10%
 }
+*/
