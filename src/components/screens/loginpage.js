@@ -19,18 +19,25 @@ import LoginController from "../classes/LoginController";
 const Login = () => {
   return (
     <div>
-        <Row>
+          <Row>
+            <Row>
+              <Col>
         <div id="loginpage-main">
             <div id="form-holder">
-            <h1 id="login-text">Login</h1>
-                <div id="form-container">
+              <h1 id="login-text">Login</h1>
+                <table id="form-container">
                         <input id="input-id" type="text" placeholder ="Enter Netid"></input>
                         <input id="input-id" type="password" placeholder="Enter Password"></input>
                             <button id="form-button"> Login </button>
                             <button id="form-button"> Forgot Password </button>
-                </div>
+              </table>
+          </div>
+          <div id="image-holder">
+          <image id="image"></image>
           </div>
         </div>
+        </Col>
+        </Row>
         </Row>
     </div>
   );
