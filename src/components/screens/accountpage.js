@@ -35,6 +35,10 @@ const AccountPage = () => {
     const [showAddCreditCardAccountModal, setShowAddCreditCardAccountModal] = useState(false);
     const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
 
+    const [addBankAccountModalSubmitButtonEnabled, setAddBankAccountModalSubmitButtonEnabled] = useState(false);
+    const [addCreditCardAccountModalSubmitButtonEnabled, setAddCreditCardAccountModalSubmitButtonEnabled] = useState(false);
+
+
     // create a state variable to track which account is being deleted
     const [accountPendingDeletion, setAccountPendingDeletion] = useState(null);
 
@@ -43,21 +47,25 @@ const AccountPage = () => {
     const handleBankAccountModalShow = () => {
         setShowAddBankAccountModal(true);
         setAddBankAccountFormData({});
+        setAddBankAccountModalSubmitButtonEnabled(false);
     }
 
     const handleBankAccountModalClose = () => {
         setShowAddBankAccountModal(false);
         setAddBankAccountFormData({});
+        setAddBankAccountModalSubmitButtonEnabled(false);
     }
     
     const handleCreditCardAccountModalShow = () => {
         setShowAddCreditCardAccountModal(true);
         setAddCreditCardAccountFormData({});
+        setAddCreditCardAccountModalSubmitButtonEnabled(false);
     }
 
     const handleCreditCardAccountModalClose = () => {
         setShowAddCreditCardAccountModal(false);
         setAddCreditCardAccountFormData({});
+        setAddCreditCardAccountModalSubmitButtonEnabled(false);
     }
 
     const handleDeleteAccountModalShow = (accountToDelete) => {
@@ -75,12 +83,21 @@ const AccountPage = () => {
     // whenever a form field is updated in a modal
     const handleBankAccountInputChangeAccountNumber = (e) => {
         setAddBankAccountFormData({...addBankAccountFormData, accountNumber: e.target.value});
+        setAddBankAccountModalSubmitButtonEnabled(
+            BankAccount.isValidFormData({...addBankAccountFormData, accountNumber: e.target.value})
+        );
     }
     const handleBankAccountInputChangeRoutingNumber = (e) => {
         setAddBankAccountFormData({...addBankAccountFormData, routingNumber: e.target.value});
+        setAddBankAccountModalSubmitButtonEnabled(
+            BankAccount.isValidFormData({...addBankAccountFormData, routingNumber: e.target.value})
+        );
     }
     const handleBankAccountInputChangeAccountName = (e) => {
         setAddBankAccountFormData({...addBankAccountFormData, accountName: e.target.value});
+        setAddBankAccountModalSubmitButtonEnabled(
+            BankAccount.isValidFormData({...addBankAccountFormData, accountName: e.target.value})
+        );
     }
 
     const handleCreditCardAccountInputChangeCardNumber = (e) => {
@@ -118,10 +135,10 @@ const AccountPage = () => {
     const deleteAccount = () => {
         handleDeleteAccountModalClose();
         if(CreditCardAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
-            setCreditCardAccountList(creditCardAccountList.filter(n => n != accountPendingDeletion));
+            setCreditCardAccountList(creditCardAccountList.filter(n => n !== accountPendingDeletion));
         }
         if(BankAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
-            setBankAccountList(bankAccountList.filter(n => n != accountPendingDeletion));
+            setBankAccountList(bankAccountList.filter(n => n !== accountPendingDeletion));
         }
     }
 
@@ -232,7 +249,7 @@ const AccountPage = () => {
                 <Button variant="secondary" onClick={handleBankAccountModalClose}>
                     Cancel
                 </Button>
-                <Button variant="primary" type="submit" onClick={addBankAccount}>
+                <Button variant="primary" disabled={!addBankAccountModalSubmitButtonEnabled} type="submit" onClick={addBankAccount}>
                     Add Bank Account
                 </Button>
             </Modal.Footer>
@@ -293,7 +310,7 @@ const AccountPage = () => {
                 <Button variant="secondary" onClick={handleCreditCardAccountModalClose}>
                     Cancel
                 </Button>
-                <Button variant="primary" type="submit" onClick={addCreditCardAccount}>
+                <Button variant="primary" disabled={!addCreditCardAccountModalSubmitButtonEnabled} type="submit" onClick={addCreditCardAccount}>
                     Add Credit Card Account
                 </Button>
             </Modal.Footer>
