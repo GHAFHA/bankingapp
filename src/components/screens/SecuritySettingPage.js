@@ -18,11 +18,11 @@ import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import useState from 'react';
 import UserSettings from "../classes/UserSettings";
-
+import { Container } from "react-bootstrap";
 
 const SecuritySetting = () => {
  
-  
+    
 
     return (
         <div>
@@ -34,7 +34,7 @@ const SecuritySetting = () => {
             <h2><font size = "4">This system is using Single sign-on(SSO)</font></h2>
             
             <div>&nbsp;</div>
-
+            <Container>
             <Table striped bordered hover size="lg">
       <thead>
         <tr>
@@ -142,6 +142,7 @@ const SecuritySetting = () => {
       </tbody>
 
     </Table>
+    </Container>
 
     
         </div>
