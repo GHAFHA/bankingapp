@@ -34,6 +34,18 @@ const TransactionsListPage = () => {
     return (
         <>
         <div>
+        <Container>
+        <Alert show={showDisputeAlert} variant="light">
+            <Alert.Heading><span style={{fontWeight: 'bold'}}>Dispute Submitted!</span></Alert.Heading>
+            
+            <div className="d-flex justify-content-start">
+                <Button onClick={() => setShowDisputeAlert(false)} variant="primary">
+                Close
+                </Button>
+            </div>
+            </Alert>
+
+            </Container>
             <Container>
             <Accordion>
                 <Accordion.Item eventKey="0">
@@ -254,18 +266,6 @@ const TransactionsListPage = () => {
             </Container>
 
         </div>
-        <Container>
-        <Alert show={showDisputeAlert} variant="light">
-            <Alert.Heading><span style={{fontWeight: 'bold'}}>Dispute Submitted</span></Alert.Heading>
-            
-            <div className="d-flex justify-content-start">
-                <Button onClick={() => setShowDisputeAlert(false)} variant="primary">
-                Close
-                </Button>
-            </div>
-            </Alert>
-
-            </Container>
         </>
       
     )
