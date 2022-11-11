@@ -12,6 +12,8 @@ import {Table, Container} from 'react-bootstrap';
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Stack from 'react-bootstrap/Stack';
+/*import useState from 'react';
+import UserSettings from "../classes/UserSettings";*/
 
 
 const UserInfo = () => 
@@ -55,8 +57,8 @@ const UserInfo = () =>
               <Accordion.Header>Alert history</Accordion.Header>
               <Accordion.Body>
                     <Stack direction="horizontal" gap={5}>
-                        Security & other alerts<br></br><br></br>
-                        CREDIT CARD (....3452) alerts<br><br></br></br>
+                        Security & other alerts
+                        CREDIT CARD (....3452) alerts
       
                     </Stack>
               
@@ -75,7 +77,7 @@ const UserInfo = () =>
               <Accordion.Header>Manage alerts</Accordion.Header>
               <Accordion.Body>
                     <Stack direction="horizontal" gap={5}>
-                        Security & other alerts<br></br><br></br>
+                        Security & other alerts
                         CREDIT CARD (....3452) alerts
                     </Stack>
               
@@ -97,7 +99,7 @@ const UserInfo = () =>
               <Accordion.Header>Contact Us</Accordion.Header>
               <Accordion.Body>
                     <Stack direction="horizontal" gap={5}>
-                        Online and Mobile technical support<br><br></br></br>
+                        Online and Mobile technical support<br></br>
                         Get More Contacts
                        
                     </Stack>
@@ -117,9 +119,9 @@ const UserInfo = () =>
               <Accordion.Header>FAQs</Accordion.Header>
               <Accordion.Body>
                     <Stack direction="horizontal" gap={5}>
-                        Security <br><br></br></br>
-                        Bill pay<br><br></br></br>
-                        eBills<br><br></br></br>
+                        Security <br></br>
+                        Bill pay<br></br>
+                        eBills<br></br>
                         Refer-a-Friend
                     </Stack>
               
