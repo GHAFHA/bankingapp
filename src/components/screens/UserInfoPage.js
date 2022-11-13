@@ -57,7 +57,7 @@ const UserInfo = () =>
               <Accordion.Header>Alert history</Accordion.Header>
               <Accordion.Body>
                     <Stack direction="horizontal" gap={5}>
-                        Security & other alerts
+                        Security & other alerts<br></br>
                         CREDIT CARD (....3452) alerts
       
                     </Stack>
@@ -77,7 +77,7 @@ const UserInfo = () =>
               <Accordion.Header>Manage alerts</Accordion.Header>
               <Accordion.Body>
                     <Stack direction="horizontal" gap={5}>
-                        Security & other alerts
+                        Security & other alerts<br></br>
                         CREDIT CARD (....3452) alerts
                     </Stack>
               
