@@ -26,6 +26,54 @@ class BankAccount extends FinancialAccount {
         output += accountNumberString.substring(accountNumberString.length - 4);
         return output;
     }
+
+    static isValidAccountNumber(accountNumberToValidate) {
+        if(accountNumberToValidate == null) {
+            return false;
+        }
+        if(!typeof(accountNumberToValidate) === "string") {
+            return false;
+        }
+        else if(accountNumberToValidate.length !== 9) {
+            return false;
+        }
+        for(let digit of accountNumberToValidate) {
+            if(digit < '0' || digit > '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static isValidRoutingNumber(routingNumberToValidate) {
+        if(routingNumberToValidate == null) {
+            return false;
+        }
+        if(!typeof(routingNumberToValidate) === "string") {
+            return false;
+        }
+        else if(routingNumberToValidate.length !== 9) {
+            return false;
+        }
+        for(let digit of routingNumberToValidate) {
+            if(digit < '0' || digit > '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static isValidDisplayName(displayNameToValidate) {
+        return FinancialAccount.isValidDisplayName(displayNameToValidate);
+    }
+
+    static isValidFormData(formData) {
+        return (
+            this.isValidAccountNumber(formData.accountNumber) &&
+            this.isValidRoutingNumber(formData.routingNumber) &&
+            this.isValidDisplayName(formData.accountName)
+        )
+    }
 }
 
 export default BankAccount;

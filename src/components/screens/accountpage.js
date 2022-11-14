@@ -33,27 +33,49 @@ const AccountPage = () => {
     // create state variables to remember whether each modal is visible or hidden
     const [showAddBankAccountModal, setShowAddBankAccountModal] = useState(false);
     const [showAddCreditCardAccountModal, setShowAddCreditCardAccountModal] = useState(false);
+    const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
+
+    const [addBankAccountModalSubmitButtonEnabled, setAddBankAccountModalSubmitButtonEnabled] = useState(false);
+    const [addCreditCardAccountModalSubmitButtonEnabled, setAddCreditCardAccountModalSubmitButtonEnabled] = useState(false);
+
+
+    // create a state variable to track which account is being deleted
+    const [accountPendingDeletion, setAccountPendingDeletion] = useState(null);
 
 
     // create helper functions for opening and closing the "Add Account" modals
     const handleBankAccountModalShow = () => {
         setShowAddBankAccountModal(true);
         setAddBankAccountFormData({});
+        setAddBankAccountModalSubmitButtonEnabled(false);
     }
 
     const handleBankAccountModalClose = () => {
         setShowAddBankAccountModal(false);
         setAddBankAccountFormData({});
+        setAddBankAccountModalSubmitButtonEnabled(false);
     }
     
     const handleCreditCardAccountModalShow = () => {
         setShowAddCreditCardAccountModal(true);
         setAddCreditCardAccountFormData({});
+        setAddCreditCardAccountModalSubmitButtonEnabled(false);
     }
 
     const handleCreditCardAccountModalClose = () => {
         setShowAddCreditCardAccountModal(false);
         setAddCreditCardAccountFormData({});
+        setAddCreditCardAccountModalSubmitButtonEnabled(false);
+    }
+
+    const handleDeleteAccountModalShow = (accountToDelete) => {
+        setAccountPendingDeletion(accountToDelete);
+        setShowDeleteAccountModal(true);
+    }
+
+    const handleDeleteAccountModalClose = () => {
+        setShowDeleteAccountModal(false);
+        setAccountPendingDeletion(null);
     }
 
 
@@ -61,25 +83,46 @@ const AccountPage = () => {
     // whenever a form field is updated in a modal
     const handleBankAccountInputChangeAccountNumber = (e) => {
         setAddBankAccountFormData({...addBankAccountFormData, accountNumber: e.target.value});
+        setAddBankAccountModalSubmitButtonEnabled(
+            BankAccount.isValidFormData({...addBankAccountFormData, accountNumber: e.target.value})
+        );
     }
     const handleBankAccountInputChangeRoutingNumber = (e) => {
         setAddBankAccountFormData({...addBankAccountFormData, routingNumber: e.target.value});
+        setAddBankAccountModalSubmitButtonEnabled(
+            BankAccount.isValidFormData({...addBankAccountFormData, routingNumber: e.target.value})
+        );
     }
     const handleBankAccountInputChangeAccountName = (e) => {
         setAddBankAccountFormData({...addBankAccountFormData, accountName: e.target.value});
+        setAddBankAccountModalSubmitButtonEnabled(
+            BankAccount.isValidFormData({...addBankAccountFormData, accountName: e.target.value})
+        );
     }
 
     const handleCreditCardAccountInputChangeCardNumber = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cardNumber: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, cardNumber: e.target.value})
+        )
     }
     const handleCreditCardAccountInputChangeExpirationDate = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, expirationDate: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, expirationDate: e.target.value})
+        )
     }
     const handleCreditCardAccountInputChangeCvvCode = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, cvv: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, cvv: e.target.value})
+        )
     }
     const handleCreditCardAccountInputChangeAccountName = (e) => {
         setAddCreditCardAccountFormData({...addCreditCardAccountFormData, accountName: e.target.value});
+        setAddCreditCardAccountModalSubmitButtonEnabled(
+            CreditCardAccount.isValidFormData({...addCreditCardAccountFormData, accountName: e.target.value})
+        )
     }
 
 
@@ -101,6 +144,16 @@ const AccountPage = () => {
         ]);
     }
 
+    const deleteAccount = () => {
+        handleDeleteAccountModalClose();
+        if(CreditCardAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
+            setCreditCardAccountList(creditCardAccountList.filter(n => n !== accountPendingDeletion));
+        }
+        if(BankAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
+            setBankAccountList(bankAccountList.filter(n => n !== accountPendingDeletion));
+        }
+    }
+
     
     // create variables to hold the HTML elements displaying account information
     // the interface uses a bootstrap "Accordion" to expand and collapse account details.
@@ -111,7 +164,7 @@ const AccountPage = () => {
     // accordion items into the array
     for(let b of bankAccountList) {
         bankAccordion.push(
-            <Accordion.Item eventKey={b.accountId}>
+            <Accordion.Item key={b.accountId} eventKey={b.accountId}>
                 <Accordion.Header>{b.displayName}</Accordion.Header>
                 <Accordion.Body>
                     <Container>
@@ -126,7 +179,7 @@ const AccountPage = () => {
                         <Row>&nbsp;</Row>
                         <Row>
                             <Col>
-                                <Button variant="danger">Delete</Button>
+                                <Button variant="danger" onClick={() => {handleDeleteAccountModalShow(b)}}>Delete</Button>
                             </Col>
                         </Row>
                     </Container>
@@ -139,7 +192,7 @@ const AccountPage = () => {
     // accordion items into the array
     for(let c of creditCardAccountList) {
         creditCardAccordion.push(
-            <Accordion.Item eventKey={c.accountId}>
+            <Accordion.Item key={c.accountId} eventKey={c.accountId}>
                 <Accordion.Header>{c.displayName}</Accordion.Header>
                 <Accordion.Body>
                     <Container>
@@ -154,7 +207,7 @@ const AccountPage = () => {
                         <Row>&nbsp;</Row>
                         <Row>
                             <Col>
-                                <Button variant="danger">Delete</Button>
+                                <Button variant="danger" onClick={() => {handleDeleteAccountModalShow(c)}}>Delete</Button>
                             </Col>
                         </Row>
                     </Container>
@@ -208,7 +261,7 @@ const AccountPage = () => {
                 <Button variant="secondary" onClick={handleBankAccountModalClose}>
                     Cancel
                 </Button>
-                <Button variant="primary" type="submit" onClick={addBankAccount}>
+                <Button variant="primary" disabled={!addBankAccountModalSubmitButtonEnabled} type="submit" onClick={addBankAccount}>
                     Add Bank Account
                 </Button>
             </Modal.Footer>
@@ -257,7 +310,7 @@ const AccountPage = () => {
                         onChange={handleCreditCardAccountInputChangeExpirationDate}
                         value={addCreditCardAccountFormData.expirationDate}
                     >
-                        <Form.Label>Expiration Date</Form.Label>
+                        <Form.Label>Expiration Date (MM/YYYY)</Form.Label>
                         <Form.Control 
                             type="string"
                             required
@@ -269,8 +322,27 @@ const AccountPage = () => {
                 <Button variant="secondary" onClick={handleCreditCardAccountModalClose}>
                     Cancel
                 </Button>
-                <Button variant="primary" type="submit" onClick={addCreditCardAccount}>
+                <Button variant="primary" disabled={!addCreditCardAccountModalSubmitButtonEnabled} type="submit" onClick={addCreditCardAccount}>
                     Add Credit Card Account
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    )
+
+    let deleteAccountModal = (
+        <Modal show={showDeleteAccountModal} onHide={handleDeleteAccountModalClose} backdrop="static">
+            <Modal.Header>
+                <Modal.Title>Delete Account</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                Are you sure you want to delete this account?
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleDeleteAccountModalClose}>
+                    Cancel
+                </Button>
+                <Button variant="danger" type="submit" onClick={deleteAccount}>
+                    Delete Account
                 </Button>
             </Modal.Footer>
         </Modal>
@@ -330,6 +402,7 @@ const AccountPage = () => {
         {/* The modal objects, although hidden by default, must be returned as elements */}
         {bankAccountModal}
         {creditCardAccountModal}
+        {deleteAccountModal}
         </>
     )
 }
