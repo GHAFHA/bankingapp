@@ -1,0 +1,73 @@
+/*
+    CS 3354.005 Fall 2022
+    Group 5: Dean Greenberg, Noel Johnson, Oscar Mata-Galvan, Vaughan McInerney, Ruchi Patel, Naod Tesfay
+    Professor Srimathi Srinivasan
+
+    This file created by Noel Johnson (nxj190008)
+
+    This file is part of the user interface.  It generates the Login page in the CometWallet app.
+*/
+
+#loginpage-main{
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../images/holding.jpg");
+    z-index: 1;
+}
+
+#form-holder{
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    left: 39%;
+    background-color: rgb(232, 117,0);
+    box-shadow: 10px 10px black;
+
+}
+
+#form-container{
+    margin-top: 10px;
+    margin-left: 23px;
+    padding: 20px;
+    background-color: rgb(232, 117,0);
+}
+
+#input-id{
+    display: block;
+    padding: 10px;
+    margin: 15px;
+    height: 50px;
+    width: 300px;
+    border: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.783);
+    
+}
+
+#form-button{
+    border-radius: 5px;
+    margin: 15px;
+    background-color: black;
+    color: white;
+}
+
+#login-text{
+    text-align: center;
+    background-color: rgb(232, 117,0);
+    color: white;
+}
+
+/* creating the image container 
+#image-holder{
+    background-size: cover;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    top: 10%
+}
+*/
