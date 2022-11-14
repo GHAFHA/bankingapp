@@ -21,6 +21,19 @@ class FinancialAccount {
         return this.isValid;
     }
 
+    static isValidDisplayName(displayNameToValidate) {
+        if(displayNameToValidate == null) {
+            return false;
+        }
+        if(!typeof(displayNameToValidate) === "string") {
+            return false;
+        }
+        else if(displayNameToValidate?.length === 0) {
+            return false;
+        }
+        return true;
+    }
+
 }
 
 export default FinancialAccount;
