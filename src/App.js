@@ -56,7 +56,7 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/account" element={<AccountPage />}></Route>
+        <Route path="/login/account" element={<AccountPage />}></Route>
         <Route path="/settings" element={<SettingsPage />}></Route>
         <Route path="/transactions" element={<TransactionsListPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>

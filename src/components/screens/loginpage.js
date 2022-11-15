@@ -11,6 +11,7 @@
 import React from "react";
 import { Container, Form, Button, Row, Col, Grid } from "react-bootstrap";
 import "./loginpage.css";
+import { Link } from "react-router-dom";
 
 //state management using useState and useReducer
 
@@ -26,8 +27,10 @@ const Login = () => {
                 <table id="form-container">
                         <input id="input-id" type="text" placeholder ="Enter Netid"></input>
                         <input id="input-id" type="password" placeholder="Enter Password"></input>
+                          <Link to = "./account" >
                             <button id="form-button"> Login </button>
                             <button id="form-button"> Forgot Password ?</button>
+                          </Link>
               </table>
               <div id="image-holder">
                 <image id="image"></image>
