@@ -18,13 +18,14 @@ import Header from "../UI/header";
 // import classes to use on the page
 import BankAccount from "../classes/BankAccount";
 import CreditCardAccount from "../classes/CreditCardAccount";
+import DatabaseManager from "../classes/DatabaseManager";
 
 // main function that returns the HTML for the account page.
 const AccountPage = () => {
 
     // create state variables to temporarily save data entered on the page 
-    const [bankAccountList, setBankAccountList] = useState([]);
-    const [creditCardAccountList, setCreditCardAccountList] = useState([]);
+    const [bankAccountList, setBankAccountList] = useState(DatabaseManager.getSessionData().bankAccountList);
+    const [creditCardAccountList, setCreditCardAccountList] = useState(DatabaseManager.getSessionData().creditCardAccountList);
 
     // create state variables to remember the data entered in forms/modals
     const [addBankAccountFormData, setAddBankAccountFormData] = useState({})
@@ -131,27 +132,30 @@ const AccountPage = () => {
     const addBankAccount = () => {
         let newAccountData = {...addBankAccountFormData};
         handleBankAccountModalClose();
-        setBankAccountList([...bankAccountList, 
+        DatabaseManager.saveBankAccountList([...bankAccountList, 
             new BankAccount(newAccountData.accountName, newAccountData.accountNumber, newAccountData.routingNumber)
         ]);
+        setBankAccountList(DatabaseManager.getSessionData().bankAccountList);
     }
 
     const addCreditCardAccount = () => {
         let newAccountData = {...addCreditCardAccountFormData};
         handleCreditCardAccountModalClose();
-        setCreditCardAccountList([...creditCardAccountList, 
+        DatabaseManager.saveCreditCardAccountList([...creditCardAccountList, 
             new CreditCardAccount(newAccountData.accountName, newAccountData.cardNumber, newAccountData.cvv, newAccountData.expirationDate)
         ]);
+        setCreditCardAccountList(DatabaseManager.getSessionData().creditCardAccountList);
     }
 
     const deleteAccount = () => {
         handleDeleteAccountModalClose();
-        if(CreditCardAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
+        if(accountPendingDeletion.accountType == "creditCard") {
             setCreditCardAccountList(creditCardAccountList.filter(n => n !== accountPendingDeletion));
         }
-        if(BankAccount.prototype.isPrototypeOf(accountPendingDeletion)) {
-            setBankAccountList(bankAccountList.filter(n => n !== accountPendingDeletion));
+        else if(accountPendingDeletion.accountType == "bank") {
+            DatabaseManager.saveBankAccountList(bankAccountList.filter(n => n !== accountPendingDeletion));
         }
+        setBankAccountList(DatabaseManager.getSessionData().bankAccountList);
     }
 
     
@@ -174,7 +178,7 @@ const AccountPage = () => {
                         </Row>
                         <Row>
                             <Col>Account Number:</Col>
-                            <Col>{b.getMaskedAccountNumber()}</Col>
+                            <Col>{BankAccount.getMaskedAccountNumber(b.accountNumber)}</Col>
                         </Row>
                         <Row>&nbsp;</Row>
                         <Row>
@@ -198,7 +202,7 @@ const AccountPage = () => {
                     <Container>
                         <Row>
                             <Col>Card Number:</Col>
-                            <Col>{c.getMaskedCreditCardNumber()}</Col>
+                            <Col>{CreditCardAccount.getMaskedCreditCardNumber(c.cardNumber)}</Col>
                         </Row>
                         <Row>
                             <Col>Expiration Date:</Col>

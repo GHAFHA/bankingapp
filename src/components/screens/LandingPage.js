@@ -26,7 +26,7 @@ const LandingPage = () => {
                     <div className="content-container">
                         <div className="text-container">
                             <h1 className="title">CometWallet</h1>
-                            <p className="subtitle">Helping UTD students manage their finaces, one card at a time</p>
+                            <p className="subtitle">Helping UTD students manage their finances, one card at a time</p>
                         </div>
                         <div className="buttonContainer">
                             <Link to ="./login">
@@ -42,20 +42,3 @@ const LandingPage = () => {
 }
 
 export default LandingPage;
-
-/*
-                    <div className="content-container">
-                        <div className="text-container">
-                            <h1 className="title">CometWallet</h1>
-                            <p className="subtitle">Helping Students manage their finances</p>
-                        </div>
-                        <div className="buttonContainer">
-                            <Link to ="./login">
-                                <Button size="lg" className="landingbutton" >Login</Button>
-                            </Link>
-                            <Link to ="./registration">
-                                <Button className="landingbutton" variant="outline-primary" size='lg'>Register</Button>
-                            </Link>
-                        </div>
-                    </div>
-*/

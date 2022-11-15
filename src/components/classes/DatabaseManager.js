@@ -8,13 +8,46 @@
     This is a stub for the experimental DatabaseManager class.
 */
 
+// import Cookies from 'react-cookie';
+// const cookies = new Cookies();
+
 class DatabaseManager {
-    constructor() {
-        this.active = true;
-        this.transactionList = [];
-        this.userList = [];
-        this.paymentProcessorList = [];
+    static getSessionData() {
+        let sessionData = JSON.parse(localStorage.getItem('sessionData'));
+        return {
+            transactionList: sessionData?.transactionList ?? [],
+            bankAccountList: sessionData?.bankAccountList ?? [],
+            creditCardAccountList: sessionData?.creditCardAccountList ?? [],
+            paymentProcessorList: sessionData?.paymentProcessorList ?? []
+        }
     }
+
+    static updateSessionDataField(fieldName, newValue) {
+        let sessionData = JSON.parse(localStorage.getItem('sessionData'));
+        sessionData = {...sessionData, [fieldName]: newValue};
+        localStorage.setItem('sessionData', JSON.stringify(sessionData));
+    }
+
+    static saveTransactionList(transactionList) {
+        this.updateSessionDataField('transactionList', transactionList);
+    }
+
+    static saveBankAccountList(bankAccountList) {
+        this.updateSessionDataField('bankAccountList', bankAccountList);
+    }
+
+    static saveCreditCardAccountList(creditCardAccountList) {
+        this.updateSessionDataField('creditCardAccountList', creditCardAccountList);
+    }
+
+    static savePaymentProcessorAccountList(paymentProcessorList) {
+        this.updateSessionDataField('paymentProcessorList', paymentProcessorList);
+    }
+
+    // static setCurrentUser(user) {
+    //     localStorage.setItem('currentUser', user);
+    // }
+
 
 }
 

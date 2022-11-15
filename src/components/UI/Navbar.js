@@ -29,6 +29,7 @@ const TopNav = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Nav.Link href="/">Log out</Nav.Link>
       </Container>
     </Navbar>
   );

@@ -27,28 +27,9 @@ import UserInfo from './components/screens/UserInfoPage';
 //import Registration from './components/screens/registration';
 
 //importing the components needed for the app
-import Navbar from './navbar/Navbar';
+import Navbar from './components/UI/Navbar';
 
 function App() {
-
-  //checking login detials
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-  }
-
-  //useState for checking stae
-  const [user, setUser] = useState({name:"", email:""})
-  //if there is an error
-  const [error, setError] = useState("")
-
-  const LoginController = details =>{
-    console.log(details);
-  }
-
-  const Logout = () =>{
-    console.log("Logout")
-  }
 
   return (
     <BrowserRouter>

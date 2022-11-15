@@ -30,20 +30,20 @@ const UserInfo = () =>
               <tr>
               <td colSpan={2}>Name:</td>
               <td></td>
-              <td> Michael Thomas </td>
+              <td> Example User </td>
               <td></td>
               </tr>
 
               <tr>
               <td colSpan={2}>Email:</td>
               <td></td>
-              <td>xyz1234@gmail.com</td>
+              <td>abc123456@utdallas.edu</td>
               </tr>
               
               <tr>
               <td colspan={2}>Phone:</td>
               <td></td>
-              <td>342-543-5624</td>
+              <td>972-000-0000</td>
               <td></td>
               </tr>
               
@@ -133,28 +133,6 @@ const UserInfo = () =>
               </Accordion.Item>
               </Accordion>
              </tr>
-             <thead>
-              <tr>
-              <th> Contact via Social</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-              <td colSpan={2}>twitter</td>
-              <td></td>
-             </tr>
-             
-              <tr>
-              <td colSpan={2}>Facebook</td>
-              <td></td>
-              
-              </tr>
-
-              <tr></tr>
-
-             
-          
-          </tbody>
           </tbody>
           </Table>
           </Container>

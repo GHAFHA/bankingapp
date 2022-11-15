@@ -44,8 +44,8 @@ const SecuritySetting = () => {
       </thead>
       <tbody>
         <tr>
-          <td colSpan={2}>Oscar Mata</td>
-          <td colSpan={2}>Contact UTD to change</td>
+          <td colSpan={2}>Example User</td>
+          <td colSpan={2}>Contact UT Dallas to change</td>
         </tr>
       </tbody>
 
@@ -64,10 +64,10 @@ const SecuritySetting = () => {
           <td colSpan={2}>Two-Factor Authentication</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="options" defaultValue={2}>
         <ToggleButton id="tbg-radio-1" value={1}>
-          Active
+          Activate
         </ToggleButton>
         <ToggleButton id="tbg-radio-2" value={2}>
-          Deactive
+          Deactivate
         </ToggleButton>
       </ToggleButtonGroup></td>
         </tr>
@@ -75,10 +75,10 @@ const SecuritySetting = () => {
           <td colSpan={2}>Email</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="email" defaultValue={4}>
         <ToggleButton id="tbg-radio-3" value={3}>
-          Active
+          Activate
         </ToggleButton>
         <ToggleButton id="tbg-radio-4" value={4}>
-          Deactive
+          Deactivate
         </ToggleButton>
       </ToggleButtonGroup></td>
         </tr>
@@ -86,10 +86,10 @@ const SecuritySetting = () => {
           <td colSpan={2}>Authenticator App</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="app" defaultValue={6}>
         <ToggleButton id="tbg-radio-5" value={5}>
-          Active
+          Activate
         </ToggleButton>
         <ToggleButton id="tbg-radio-6" value={6}>
-          Deactive
+          Deactivate
         </ToggleButton>
       </ToggleButtonGroup></td>
         </tr>
@@ -110,10 +110,10 @@ const SecuritySetting = () => {
           <td colSpan={2}>Login Notification</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="notif" defaultValue={8}>
         <ToggleButton id="tbg-radio-7" value={7}>
-          Active
+          Activate
         </ToggleButton>
         <ToggleButton id="tbg-radio-8" value={8}>
-          Deactive
+          Deactivate
         </ToggleButton>
       </ToggleButtonGroup></td>
         </tr>
@@ -121,10 +121,10 @@ const SecuritySetting = () => {
           <td colSpan={2}>Email</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="no" defaultValue={10}>
         <ToggleButton id="tbg-radio-9" value={9}>
-          Active
+          Activate
         </ToggleButton>
         <ToggleButton id="tbg-radio-10" value={10}>
-          Deactive
+          Deactivate
         </ToggleButton>
       </ToggleButtonGroup></td>
         </tr>
@@ -132,10 +132,10 @@ const SecuritySetting = () => {
           <td colSpan={2}>SMS</td>
           <td colSpan={2}><ToggleButtonGroup type="radio" name="sms" defaultValue={12}>
         <ToggleButton id="tbg-radio-11" value={11}>
-          Active
+          Activate
         </ToggleButton>
         <ToggleButton id="tbg-radio-12" value={12}>
-          Deactive
+          Deactivate
         </ToggleButton>
       </ToggleButtonGroup></td>
         </tr>
