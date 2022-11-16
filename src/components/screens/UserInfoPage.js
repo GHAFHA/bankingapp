@@ -15,127 +15,129 @@ import Stack from 'react-bootstrap/Stack';
 /*import useState from 'react';
 import UserSettings from "../classes/UserSettings";*/
 
+import Navbar from '../UI/Navbar'
+
 
 const UserInfo = () => 
 {
     return (
-          <Container>
-          <Table striped>
-              <thead>
-              <tr>
-              <th> User Profile</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-              <td colSpan={2}>Name:</td>
-              <td></td>
-              <td> Example User </td>
-              <td></td>
-              </tr>
+        <><Navbar></Navbar><Container>
+            <Table striped>
+                <thead>
+                    <tr>
+                        <th> User Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colSpan={2}>Name:</td>
+                        <td></td>
+                        <td> Example User </td>
+                        <td></td>
+                    </tr>
 
-              <tr>
-              <td colSpan={2}>Email:</td>
-              <td></td>
-              <td>abc123456@utdallas.edu</td>
-              </tr>
-              
-              <tr>
-              <td colspan={2}>Phone:</td>
-              <td></td>
-              <td>972-000-0000</td>
-              <td></td>
-              </tr>
-              
-              <tr>
-              <th> Alerts and messages:</th>
-              </tr>
-       
-              <tr>
-              <Accordion>
-              <Accordion.Item eventKey="0">
-              <Accordion.Header>Alert history</Accordion.Header>
-              <Accordion.Body>
-                    <Stack direction="horizontal" gap={5}>
-                        Security & other alerts<br></br>
-                        CREDIT CARD (....3452) alerts
-      
-                    </Stack>
-              
-              <td></td>
-              <td></td>
-              <td></td>
-              
-              </Accordion.Body>
-              </Accordion.Item>
-              </Accordion>
-              </tr>
-              
-              <tr>
-              <Accordion>
-              <Accordion.Item eventKey="0">
-              <Accordion.Header>Manage alerts</Accordion.Header>
-              <Accordion.Body>
-                    <Stack direction="horizontal" gap={5}>
-                        Security & other alerts<br></br>
-                        CREDIT CARD (....3452) alerts
-                    </Stack>
-              
-              <td></td>
-              <td></td>
-              <td></td>
-              
-              </Accordion.Body>
-              </Accordion.Item>
-              </Accordion>
-              </tr>
-              
-             
-            
-              <th>Help & Support:</th>
-              <tr>
-              <Accordion>
-              <Accordion.Item eventKey="0">
-              <Accordion.Header>Contact Us</Accordion.Header>
-              <Accordion.Body>
-                    <Stack direction="horizontal" gap={5}>
-                        Online and Mobile technical support<br></br>
-                        Get More Contacts
-                       
-                    </Stack>
-              
-              <td></td>
-              <td></td>
-              <td></td>
-              
-              </Accordion.Body>
-              </Accordion.Item>
-              </Accordion>
-              </tr>
-            
-              <tr>
-              <Accordion>
-              <Accordion.Item eventKey="0">
-              <Accordion.Header>FAQs</Accordion.Header>
-              <Accordion.Body>
-                    <Stack direction="horizontal" gap={5}>
-                        Security <br></br>
-                        Bill pay<br></br>
-                        eBills<br></br>
-                        Refer-a-Friend
-                    </Stack>
-              
-              <td></td>
-              <td></td>
-              <td></td>
-              
-              </Accordion.Body>
-              </Accordion.Item>
-              </Accordion>
-             </tr>
-          </tbody>
-          </Table>
-          </Container>
+                    <tr>
+                        <td colSpan={2}>Email:</td>
+                        <td></td>
+                        <td>abc123456@utdallas.edu</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan={2}>Phone:</td>
+                        <td></td>
+                        <td>972-000-0000</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th> Alerts and messages:</th>
+                    </tr>
+
+                    <tr>
+                        <Accordion>
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>Alert history</Accordion.Header>
+                                <Accordion.Body>
+                                    <Stack direction="horizontal" gap={5}>
+                                        Security & other alerts<br></br>
+                                        CREDIT CARD (....3452) alerts
+
+                                    </Stack>
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                    </tr>
+
+                    <tr>
+                        <Accordion>
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>Manage alerts</Accordion.Header>
+                                <Accordion.Body>
+                                    <Stack direction="horizontal" gap={5}>
+                                        Security & other alerts<br></br>
+                                        CREDIT CARD (....3452) alerts
+                                    </Stack>
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                    </tr>
+
+
+
+                    <th>Help & Support:</th>
+                    <tr>
+                        <Accordion>
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>Contact Us</Accordion.Header>
+                                <Accordion.Body>
+                                    <Stack direction="horizontal" gap={5}>
+                                        Online and Mobile technical support<br></br>
+                                        Get More Contacts
+
+                                    </Stack>
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                    </tr>
+
+                    <tr>
+                        <Accordion>
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>FAQs</Accordion.Header>
+                                <Accordion.Body>
+                                    <Stack direction="horizontal" gap={5}>
+                                        Security <br></br>
+                                        Bill pay<br></br>
+                                        eBills<br></br>
+                                        Refer-a-Friend
+                                    </Stack>
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                    </tr>
+                </tbody>
+            </Table>
+        </Container></>
             );
 }
 

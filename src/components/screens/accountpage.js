@@ -14,6 +14,8 @@ import React, { useState } from "react";
 // import useful bootstrap components, and the header/navigation bar
 import { Accordion, Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import Header from "../UI/header";
+import Navbar from '../UI/Navbar';
+
 
 // import classes to use on the page
 import BankAccount from "../classes/BankAccount";
@@ -149,10 +151,10 @@ const AccountPage = () => {
 
     const deleteAccount = () => {
         handleDeleteAccountModalClose();
-        if(accountPendingDeletion.accountType == "creditCard") {
+        if(accountPendingDeletion.accountType === "creditCard") {
             setCreditCardAccountList(creditCardAccountList.filter(n => n !== accountPendingDeletion));
         }
-        else if(accountPendingDeletion.accountType == "bank") {
+        else if(accountPendingDeletion.accountType === "bank") {
             DatabaseManager.saveBankAccountList(bankAccountList.filter(n => n !== accountPendingDeletion));
         }
         setBankAccountList(DatabaseManager.getSessionData().bankAccountList);
@@ -359,6 +361,7 @@ const AccountPage = () => {
     // parsed and displayed to the user.
     return (
         <>
+        <Navbar></Navbar>
         <Container>
             <Row>&nbsp;</Row>
             <Row>
