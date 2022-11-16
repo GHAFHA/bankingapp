@@ -13,14 +13,15 @@ import FinancialAccount from "./FinancialAccount";
 class CreditCardAccount extends FinancialAccount {
     constructor(displayName, cardNumber, cvvCode, expirationDate) {
         super(displayName);
+        this.accountType = "creditCard";
         this.cardNumber = cardNumber;
         this.cvvCode = cvvCode;
         this.expirationDate = expirationDate;
     }
 
-    getMaskedCreditCardNumber() {
+    static getMaskedCreditCardNumber(cardNumber) {
         let output = "";
-        let cardNumberString = "" + this.cardNumber
+        let cardNumberString = "" + cardNumber
         for(let i = 0; i < cardNumberString.length - 4; i++) {
             output += "*";
         }
