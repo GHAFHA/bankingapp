@@ -10,9 +10,11 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown"
 import { Container, Row, Col } from "react-bootstrap";
 
+import Navbar from '../UI/Navbar'
+
 const Settings = () => {
   return (
-    <Container>
+    <><Navbar></Navbar><Container>
 
       <Row className="Row-Container">
 
@@ -36,7 +38,7 @@ const Settings = () => {
           </div>
         </Col>
       </Row>
-    </Container>
+    </Container></>
   )
 }
 
