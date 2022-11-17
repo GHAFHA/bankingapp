@@ -13,7 +13,6 @@ import { Row } from "react-bootstrap";
 import "./loginpage.css";
 import { Link } from "react-router-dom";
 
-import LoginController from "../classes/LoginController";
 
 const Login = () => {
   return (
@@ -27,6 +26,8 @@ const Login = () => {
                         <input id="input-id" type="password" placeholder="Enter Password"></input>
                           <Link to = "/accounts" >
                             <button id="form-button">Login </button>
+                          </Link>
+                          <Link to = "/" >
                             <button id="form-button">Forgot Password?</button>
                           </Link>
               </table>
