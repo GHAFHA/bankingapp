@@ -16,11 +16,11 @@ const TopNav = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/homepage">CometWallet</Navbar.Brand>
+        <Navbar.Brand href="/accounts">CometWallet</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/account">Accounts</Nav.Link>
+            <Nav.Link href="/accounts">Accounts</Nav.Link>
             <Nav.Link href="/transactions">Transactions</Nav.Link>
             <NavDropdown title="Settings" id="basic-nav-dropdown">
               <NavDropdown.Item href="/notificationsettings">Notification Settings</NavDropdown.Item>
@@ -29,6 +29,7 @@ const TopNav = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Nav.Link href="/">Log out</Nav.Link>
       </Container>
     </Navbar>
   );

@@ -13,13 +13,14 @@ import FinancialAccount from "./FinancialAccount";
 class BankAccount extends FinancialAccount {
     constructor(displayName, accountNumber, routingNumber) {
         super(displayName);
+        this.accountType = "bank";
         this.accountNumber = accountNumber;
         this.routingNumber = routingNumber;
     }
 
-    getMaskedAccountNumber() {
+    static getMaskedAccountNumber(accountNumber) {
         let output = "";
-        let accountNumberString = "" + this.accountNumber
+        let accountNumberString = "" + accountNumber
         for(let i = 0; i < accountNumberString.length - 4; i++) {
             output += "*";
         }
