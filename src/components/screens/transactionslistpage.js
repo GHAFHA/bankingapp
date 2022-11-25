@@ -17,7 +17,6 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { useState } from 'react';
 
-import TransactionController from "../classes/TransactionController";
 import { Container } from "react-bootstrap";
 
 import Navbar from '../UI/Navbar'
@@ -26,11 +25,6 @@ import Navbar from '../UI/Navbar'
 const TransactionsListPage = () => {
     const [showDisputeAlert, setShowDisputeAlert] = useState(false);
 
-    // const dispute = () => {
-    //     setShowDisputeAlert(true);
-    // }
-    
-    
     return (
         <>
         <Navbar></Navbar>
